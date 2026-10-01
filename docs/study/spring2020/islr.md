@@ -2,17 +2,23 @@
 title: "522 гр., по выбору. Спецкурс «Интеллектуальный анализ данных» (5 курс)"
 ---
 
-**Место и время проведения:** вторник, вторая пара (11:15-12:50), ауд. 2446  
+ **Место и время проведения:** вторник, вторая пара (11:15-12:50), ауд. 2446  
 **Преподаватель:** Коробейников Антон Иванович  
-—-
+
+
+---
 
 ## Программа курса
 
+
 ### Темы состоявшихся занятий
+
 
 1.  [Линейные модели. Оценивание, проверка гипотез. Дисперсионный анализ как линейная модель. Анализ ковариаций](../../assets/study/spring2018/islr/03-regression.pdf)
 
+
 ### Темы будущих занятий
+
 
 1.  [Простейшие задачи классификации. Логистическая регрессия. LDA, QDA, naive Bayes. Понятие ROC-кривой, AUC](../../assets/study/spring2018/islr/04-classification.pdf)
 2.  [Resampling: Кросс-валидация и бутстреп.](../../assets/study/spring2018/islr/05-cvboot.pdf)
@@ -27,13 +33,15 @@ title: "522 гр., по выбору. Спецкурс «Интеллектуа�
 11. Методы уменьшения размерности - PCA, principal component regression, partial least squares
 12. Unsupervised learning. Кластеризация
 
+
 ## Textbook
 
-[Introduction to Statistical Learning with R](http://faculty.marshall.usc.edu/gareth-james/ISL/ISLR%20Seventh%20Printing.pdf)
+ [Introduction to Statistical Learning with R](http://faculty.marshall.usc.edu/gareth-james/ISL/ISLR%20Seventh%20Printing.pdf)
+
 
 ## Онлайн-лекции
 
-Онлайн-лекции к курсу доступны на [Stanford Online](https://online.stanford.edu/courses/sohs-ystatslearning-statistical-learning) Содержание лекций (и соответствие с главами ISLR):
+ Онлайн-лекции к курсу доступны на [Stanford Online](https://online.stanford.edu/courses/sohs-ystatslearning-statistical-learning) Содержание лекций (и соответствие с главами ISLR):
 
 - Week 1: Introduction and Overview of Statistical Learning (Chapters 1-2)
 - Week 2: Linear Regression (Chapter 3)
@@ -45,7 +53,9 @@ title: "522 гр., по выбору. Спецкурс «Интеллектуа�
 - Week 8: Support Vector Machines (Chapter 9)
 - Week 9: Unsupervised Learning (Chapter 10)
 
+
 ## Домашние задания
+
 
 1.  Глава 3 ISLR. Индивидуальные задания после главы 3 (Regression)
 2.  Глава 4 ISLR. Индивидуальные задания после главы 4 (Classification)
@@ -55,9 +65,10 @@ title: "522 гр., по выбору. Спецкурс «Интеллектуа�
 6.  Глава 8 ISLR. Индивидуальные задания после главы 8 (Trees)
 7.  Глава 9 ISLR. Индивидуальные задания после главы 9 (SVM)
 
+
 ## Prerequisites
 
-Дистрибутив R:
+ Дистрибутив R:
 
 1.  [Windows](http://cran.r-project.org/bin/windows/base/R-3.4.3-win.exe)
 2.  [Linux](http://cran.r-project.org/bin/linux)
@@ -67,9 +78,13 @@ title: "522 гр., по выбору. Спецкурс «Интеллектуа�
 
 1.  [R Studio (Windows, Linux, MacOS X)](http://www.rstudio.org)
 
+
 ## Рекомендуемая литература
 
+ 
+
 ### Книги
+
 
 1.  **Peter Dalgaard**. *Introductory Statistics with R*. Springer, 2002.
 2.  **John Maindonald and John Braun**. *Data Analysis and Graphics Using R*. Cambridge University Press, Cambridge, 2003.
@@ -78,7 +93,9 @@ title: "522 гр., по выбору. Спецкурс «Интеллектуа�
 5.  **Шипунов А.Б., Балдин Е.М., Волкова П.А., Коробейников А.И., Назарова С.А., Петров С.В., Суфиянов В.Г.** Наглядная статистика. Используем R! – М.: ДМК Пресс, 2012. – 298 с. [PDF](http://ashipunov.info/shipunov/school/books/rbook.pdf)
 6.  **Роберт И. Кабаков** R в действии. Анализ и визуализация данных в R. – М.: ДМК Пресс, 2013. – 280 с.
 
+
 ### Статьи
+
 
 1.  **John Maindonald**. *Using R for Data Analysis and Graphics - Introduction, Examples and Commentary*. [PDF](http://cran.r-project.org/doc/contrib/usingR.pdf)
 2.  **John Verzani**. *Simple R*. [PDF](http://cran.r-project.org/doc/contrib/Verzani-SimpleR.pdf)
@@ -86,9 +103,10 @@ title: "522 гр., по выбору. Спецкурс «Интеллектуа�
 4.  **David Rossiter**. *Introduction to the R Project for Statistical Computing for Use at the ITC*. [PDF](http://cran.r-project.org/doc/contrib/Rossiter-RIntro-ITC.pdf)
 5.  **Е.М. Балдин, А.И. Коробейников, А.Б. Шипунов** *Анализ данных с R* [www](http://www.inp.nsk.su/~baldin/DataAnalysis/)
 
+
 ## Задачи
 
-Условные обозначения:
+ Условные обозначения:
 
 1.  Цифра в клетке - порядковый номер “подхода”. Наличие цифры означает, что решение было получено, **проверено**, и результат отослан обратно.
 2.  Решетка - задание запрошено и выдано, плюс - зачтено, звездочка - штраф, минус - хм, незачет ;-)

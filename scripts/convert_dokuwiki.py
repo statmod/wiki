@@ -13,6 +13,7 @@ import tempfile
 from collections import defaultdict
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
+from urllib.parse import quote, unquote
 
 IMAGE_EXTS = {".png", ".jpg", ".jpeg", ".gif", ".svg", ".webp", ".bmp"}
 EXCLUDE_PREFIXES = ("wiki/", "playground/", "common/")
@@ -28,6 +29,136 @@ MEDIA_RE = re.compile(r"\{\{\s*([^}|]+?)(?:\?([^}|]*))?(?:\s*\|\s*([^}]*))?\s*\}
 LINK_RE = re.compile(r"\[\[([^\]]+)\]\]")
 HEADING_RE = re.compile(r"^(={2,6})\s*(.+?)\s*\1\s*$", re.M)
 PH_RE = re.compile(r"¤¤PH(\d+)¤¤")
+# Unicode dashes often mixed into broken HRs by pandoc
+UNICODE_DASHES = "\u2010\u2011\u2012\u2013\u2014\u2015\u2212\ufe58\ufe63\uff0d"
+HR_LINE_RE = re.compile(
+    rf"^[ \t]*[{re.escape('-' + UNICODE_DASHES)}]{{2,}}[ \t]*$"
+)
+DOKU_HEADING_RE = re.compile(
+    r"^[ \t]*(={2,6})[ \t]+(.+?)[ \t]+\1[ \t]*$"
+)
+# Malformed: no spaces, unequal equals count on each side
+DOKU_HEADING_LOOSE_RE = re.compile(
+    r"^[ \t]*(={2,})[ \t]*(.+?)[ \t]*(={2,})[ \t]*$"
+)
+DOKU_SEP_RE = re.compile(r"^[ \t]*={4,}[ \t]*$")
+DOKU_HR_RE = re.compile(r"^[ \t]*-{4,}[ \t]*$")
+
+
+def doku_heading_to_md(marks: str, title: str) -> str:
+    """DokuWiki ======…====== → Markdown #… (more equals = higher rank)."""
+    n = min(len(marks), 6)
+    level = max(1, min(6, 7 - n))
+    # strip stray = left by asymmetric / malformed markup
+    title = title.strip().strip("=").strip()
+    return f"{'#' * level} {title}"
+
+
+def match_doku_heading(line: str) -> Optional[re.Match]:
+    m = DOKU_HEADING_RE.match(line)
+    if m:
+        return m
+    m = DOKU_HEADING_LOOSE_RE.match(line)
+    if not m:
+        return None
+    title = m.group(2).strip()
+    # reject pure separators
+    if not title or re.fullmatch(r"=+", title):
+        return None
+    return m
+
+
+def normalize_dokuwiki_markup(text: str, store: PlaceholderStore) -> str:
+    """Fix heading/HR quirks before pandoc so it does not emit '—-' etc."""
+    lines = text.splitlines()
+    out: List[str] = []
+    for line in lines:
+        stripped = line.strip()
+        # Decorative ===== separators (no title) → HR placeholder
+        if DOKU_SEP_RE.match(line):
+            out.append(store.put("\n\n---\n\n"))
+            continue
+        # DokuWiki horizontal rule ---- (ASCII). Pandoc after \\ often
+        # mangles these into an em-dash/hyphen mix that breaks layout.
+        if DOKU_HR_RE.match(line):
+            out.append(store.put("\n\n---\n\n"))
+            continue
+        # Headings with leading spaces or missing spaces around title
+        m = match_doku_heading(line)
+        if m:
+            marks, title = m.group(1), m.group(2).strip()
+            if title and not re.fullmatch(r"=+", title):
+                out.append(store.put("\n\n" + doku_heading_to_md(marks, title) + "\n\n"))
+                continue
+        out.append(line)
+    return "\n".join(out)
+
+
+def fix_residual_headings_and_hrs(md: str) -> str:
+    """Clean leftover DokuWiki headings and mangled dash rules after pandoc."""
+    lines = md.splitlines()
+    out: List[str] = []
+    in_fence = False
+    for line in lines:
+        if line.strip().startswith("```"):
+            in_fence = not in_fence
+            out.append(line)
+            continue
+        if in_fence:
+            out.append(line)
+            continue
+
+        # Mangled HR: any line of only ASCII/Unicode dashes (not YAML --- alone
+        # inside front matter — handled by running this only on body, or by
+        # allowing --- through unchanged).
+        if HR_LINE_RE.match(line):
+            # Preserve exact YAML --- fences; normalize everything else to ---
+            if line.strip() == "---":
+                out.append("---")
+            else:
+                out.append("---")
+            continue
+
+        # Leftover DokuWiki headings (with or without spaces)
+        m = match_doku_heading(line)
+        if m:
+            marks, title = m.group(1), m.group(2).strip()
+            if title and not re.fullmatch(r"=+", title):
+                out.append(doku_heading_to_md(marks, title))
+                continue
+
+        # Separator equals glued to following text: "======== Foo bar"
+        m2 = re.match(r"^[ \t]*={4,}[ \t]+(.+)$", line)
+        if m2 and not re.search(r"={2,}\s*$", line.strip()):
+            rest = m2.group(1).strip()
+            if rest:
+                out.append("---")
+                out.append("")
+                out.append(rest)
+                continue
+
+        if DOKU_SEP_RE.match(line):
+            out.append("---")
+            continue
+
+        out.append(line)
+
+    # Collapse runs of blank-separated duplicate horizontal rules
+    collapsed: List[str] = []
+    i = 0
+    while i < len(out):
+        collapsed.append(out[i])
+        if out[i].strip() == "---":
+            j = i + 1
+            while j < len(out) and out[j].strip() in ("", "---"):
+                j += 1
+            # skip extra --- / blanks between, keep a single blank after HR
+            if j < len(out):
+                collapsed.append("")
+            i = j
+            continue
+        i += 1
+    return "\n".join(collapsed)
 
 
 def log(msg: str) -> None:
@@ -70,15 +201,44 @@ def build_id_to_docs(pages: Dict[str, Path], pages_root: Path) -> Dict[str, Path
 
 
 def media_fs_candidates(media_root: Path, media_id: str) -> List[Path]:
+    """Resolve DokuWiki media id to filesystem path(s).
+
+    Handles:
+    - case-insensitive names
+    - percent-encoded Cyrillic filenames on disk (DokuWiki dump artifact)
+    - double-underscore artifacts from underline markup (``4_8__all_`` → ``4_8_all_``)
+    """
     media_id = normalize_id(media_id.split("?")[0])
-    rel = media_id.replace(":", "/")
-    direct = media_root / rel
-    if direct.is_file():
-        return [direct]
-    parent = media_root / Path(rel).parent
-    name = Path(rel).name.lower()
-    if parent.is_dir():
-        matches = [p for p in parent.iterdir() if p.is_file() and p.name.lower() == name]
+    variants = [media_id]
+    if "__" in media_id:
+        variants.append(media_id.replace("__", "_"))
+
+    for mid in variants:
+        rel = mid.replace(":", "/")
+        direct = media_root / rel
+        if direct.is_file():
+            return [direct]
+
+        parent = media_root / Path(rel).parent
+        want = Path(rel).name
+        want_l = want.lower()
+        encoded_l = quote(want, safe="().-_").lower()
+        if not parent.is_dir():
+            continue
+        matches = []
+        for p in parent.iterdir():
+            if not p.is_file():
+                continue
+            pname = p.name
+            pname_l = pname.lower()
+            decoded_l = unquote(pname).lower()
+            if (
+                pname_l == want_l
+                or decoded_l == want_l
+                or pname_l == encoded_l
+                or unquote(pname_l) == want_l
+            ):
+                matches.append(p)
         if matches:
             return matches
     return []
@@ -86,7 +246,52 @@ def media_fs_candidates(media_root: Path, media_id: str) -> List[Path]:
 
 def media_docs_rel(media_id: str) -> str:
     rel = normalize_id(media_id.split("?")[0]).replace(":", "/")
-    return f"assets/{rel}"
+    # Prefer decoded form in links even if source id had oddities
+    parts = [unquote(p) for p in Path(rel).parts]
+    if parts and "__" in parts[-1]:
+        parts[-1] = parts[-1].replace("__", "_")
+    return "assets/" + "/".join(parts)
+
+
+def media_path_to_assets_rel(path: Path, media_root: Path) -> str:
+    """Map a media filesystem path to docs/assets relative path with decoded names."""
+    parts = path.relative_to(media_root).parts
+    return "assets/" + "/".join(unquote(p) for p in parts)
+
+
+def decode_percent_encoded_names(root: Path) -> List[Tuple[str, str]]:
+    """Rename %XX-encoded file/dir names under root to decoded Unicode.
+
+    Returns list of (old_relpath, new_relpath).
+    """
+    renames: List[Tuple[str, str]] = []
+    # Process deepest paths first so parents rename after children
+    entries = sorted(
+        [p for p in root.rglob("*") if "%" in p.name],
+        key=lambda p: len(p.as_posix()),
+        reverse=True,
+    )
+    for path in entries:
+        if not path.exists():
+            continue
+        new_name = unquote(path.name)
+        if new_name == path.name:
+            continue
+        dest = path.with_name(new_name)
+        if dest.exists():
+            # Already have decoded copy — drop the encoded duplicate
+            if path.is_file() and dest.is_file():
+                path.unlink()
+                renames.append(
+                    (
+                        str(path.relative_to(root)),
+                        str(dest.relative_to(root)) + " (kept existing)",
+                    )
+                )
+            continue
+        path.rename(dest)
+        renames.append((str(path.relative_to(root)), str(dest.relative_to(root))))
+    return renames
 
 
 def list_media_images(media_root: Path, ns: str) -> List[Path]:
@@ -104,8 +309,16 @@ def relative_link(from_docs: Path, to_docs: Path) -> str:
 
 
 def extract_title(text: str) -> Optional[str]:
+    for line in text.splitlines():
+        m = match_doku_heading(line)
+        if m:
+            title = m.group(2).strip().strip("=").strip()
+            if title:
+                return title
     m = HEADING_RE.search(text)
-    return m.group(2).strip() if m else None
+    if m:
+        return m.group(2).strip().strip("=").strip()
+    return None
 
 
 def parse_indexmenu_target(spec: str) -> str:
@@ -160,7 +373,7 @@ def generate_gallery_md(ns: str, media_root: Path, from_docs: Path) -> str:
         return f"<!-- gallery empty: {ns} -->"
     lines = []
     for f in files:
-        docs_target = Path("assets") / f.relative_to(media_root).as_posix()
+        docs_target = Path(media_path_to_assets_rel(f, media_root))
         href = relative_link(from_docs, docs_target)
         lines.append(f"![{f.name}]({href})")
     return "\n\n".join(lines)
@@ -252,6 +465,9 @@ def preprocess(
 ) -> str:
     from_docs = id_to_docs[page_id]
 
+    # Normalize headings / HRs before pandoc (avoids '—-' and missed =====)
+    text = normalize_dokuwiki_markup(text, store)
+
     def repl_indexmenu(m: re.Match) -> str:
         ns = parse_indexmenu_target(m.group(1))
         md = generate_indexmenu_md(ns, pages, id_to_docs, page_id)
@@ -308,7 +524,7 @@ def preprocess(
             missing_media.append((page_id, media_id))
             docs_rel = media_docs_rel(media_id)
         else:
-            docs_rel = "assets/" + cands[0].relative_to(media_root).as_posix()
+            docs_rel = media_path_to_assets_rel(cands[0], media_root)
         href = relative_link(from_docs, Path(docs_rel))
         label = title or Path(docs_rel).name
         ext = Path(docs_rel).suffix.lower()
@@ -429,11 +645,20 @@ def finalize_md(md: str, title: Optional[str], store: PlaceholderStore) -> str:
     md = md.replace("](BROKEN:doc)", "](books/index.md)")
     md = md.replace("](BROKEN:other)", "](study/index.md)")
 
-    body = md
+    md = fix_residual_headings_and_hrs(md)
+
+    body = md.lstrip("\n")
     if title:
-        body = re.sub(r"^#\s+.+\n+", "", body, count=1)
+        # Drop first H1 (promoted to front-matter title)
+        body = re.sub(r"^#\s+.+\n+", "", body, count=1).lstrip("\n")
+        # Pages sometimes have a second ====== title; demote leftover leading H1s
+        while True:
+            m = re.match(r"^#\s+(.+?)\n+", body)
+            if not m:
+                break
+            body = f"## {m.group(1).strip()}\n\n" + body[m.end() :].lstrip("\n")
         safe = title.replace("\\", "\\\\").replace('"', '\\"')
-        body = f'---\ntitle: "{safe}"\n---\n\n' + body.lstrip()
+        body = f'---\ntitle: "{safe}"\n---\n\n' + body
 
     body = re.sub(r"\n{4,}", "\n\n\n", body)
     return body
@@ -614,6 +839,11 @@ def copy_media(media_root: Path, assets_root: Path) -> int:
     if not media_root.is_dir():
         return 0
     shutil.copytree(media_root, assets_root)
+    renames = decode_percent_encoded_names(assets_root)
+    if renames:
+        log(f"Decoded {len(renames)} percent-encoded media names")
+        for old, new in renames:
+            log(f"  {old} -> {new}")
     return sum(1 for p in assets_root.rglob("*") if p.is_file())
 
 

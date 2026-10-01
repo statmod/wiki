@@ -2,13 +2,17 @@
 title: "Спецкурс «Интеллектуальный анализ данных» (5 курс)"
 ---
 
-**Место и время проведения:** вторник, вторая пара (11:15-12:50), ауд. 3527  
+ **Место и время проведения:** вторник, вторая пара (11:15-12:50), ауд. 3527  
 **Преподаватель:** Коробейников Антон Иванович  
-—-
+
+
+---
 
 ## Программа курса
 
+
 ### Темы состоявшихся занятий
+
 
 1.  Линейные модели. Оценивание, проверка гипотез. Дисперсионный анализ как линейная модель. Анализ ковариаций. [PDF](../../assets/study/spring2016/islr/02-regression.pdf) [PDF](../../assets/study/spring2016/islr/03-regression.pdf)
 2.  Робастная регрессия
@@ -18,7 +22,9 @@ title: "Спецкурс «Интеллектуальный анализ дан�
 6.  Деревья классификации. Bagging, random forest, boosting [PDF](../../assets/study/spring2016/islr/06-trees.pdf)
 7.  Обобщенные линейные модели (GLM) [PDF](../../assets/study/spring2016/islr/04-glm.pdf)
 
+
 ### Темы будущих занятий
+
 
 1.  Нелинейности. Сплайны, GAM
 2.  Hidden Markov Models
@@ -27,20 +33,24 @@ title: "Спецкурс «Интеллектуальный анализ дан�
 5.  Методы уменьшения размерности - PCA, principal component regression, partial least squares
 6.  Unsupervised learning. Кластеризация
 
+
 ## Textbook
 
-[Introduction to Statistical Learning with R](http://www-bcf.usc.edu/~gareth/ISL/ISLR%20Sixth%20Printing.pdf)
+ [Introduction to Statistical Learning with R](http://www-bcf.usc.edu/~gareth/ISL/ISLR%20Sixth%20Printing.pdf)
+
 
 ## Домашние задания
+
 
 1.  Глава 3 ISLR. Индивидуальные задания после главы 3.
 2.  Глава 4 ISLR. Индивидуальные задания после главы 4.
 3.  Глава 6 ISLR. Индивидуальные задания после главы 6.
 4.  Глава 8 ISLR. Индивидуальные задания после главы 8.
 
+
 ## Prerequisites
 
-Дистрибутив R:
+ Дистрибутив R:
 
 1.  [Windows](http://cran.r-project.org/bin/windows/base/R-3.2.2-win.exe)
 2.  [Linux](http://cran.r-project.org/bin/linux)
@@ -53,9 +63,13 @@ title: "Спецкурс «Интеллектуальный анализ дан�
 3.  [SciViews-K (Windows, Linux, MacOS X)](http://www.sciviews.org/SciViews-K/index.html)
 4.  [RKWard (Linux)](http://rkward.sourceforge.net/)
 
+
 ## Рекомендуемая литература
 
+ 
+
 ### Книги
+
 
 1.  **Peter Dalgaard**. *Introductory Statistics with R*. Springer, 2002.
 2.  **John Maindonald and John Braun**. *Data Analysis and Graphics Using R*. Cambridge University Press, Cambridge, 2003.
@@ -64,7 +78,9 @@ title: "Спецкурс «Интеллектуальный анализ дан�
 5.  **Шипунов А.Б., Балдин Е.М., Волкова П.А., Коробейников А.И., Назарова С.А., Петров С.В., Суфиянов В.Г.** Наглядная статистика. Используем R! – М.: ДМК Пресс, 2012. – 298 с. [PDF](http://ashipunov.info/shipunov/school/books/rbook.pdf)
 6.  **Роберт И. Кабаков** R в действии. Анализ и визуализация данных в R. – М.: ДМК Пресс, 2013. – 280 с.
 
+
 ### Статьи
+
 
 1.  **John Maindonald**. *Using R for Data Analysis and Graphics - Introduction, Examples and Commentary*. [PDF](http://cran.r-project.org/doc/contrib/usingR.pdf)
 2.  **John Verzani**. *Simple R*. [PDF](http://cran.r-project.org/doc/contrib/Verzani-SimpleR.pdf)
@@ -72,9 +88,10 @@ title: "Спецкурс «Интеллектуальный анализ дан�
 4.  **David Rossiter**. *Introduction to the R Project for Statistical Computing for Use at the ITC*. [PDF](http://cran.r-project.org/doc/contrib/Rossiter-RIntro-ITC.pdf)
 5.  **Е.М. Балдин, А.И. Коробейников, А.Б. Шипунов** *Анализ данных с R* [www](http://www.inp.nsk.su/~baldin/DataAnalysis/)
 
+
 ## Задачи
 
-Условные обозначения:
+ Условные обозначения:
 
 1.  Цифра в клетке - порядковый номер “подхода”. Наличие цифры означает, что решение было получено, **проверено**, и результат отослан обратно.
 2.  Решетка - задание запрошено и выдано, плюс - зачтено, звездочка - штраф, минус - хм, незачет ;-)
@@ -96,6 +113,8 @@ title: "Спецкурс «Интеллектуальный анализ дан�
 | Старков    | \+   | \+   | \+   | \+   | \+    |
 | Жуков      | 10   | 11   | 9    | 9    |       |
 
+
 ## Разное
+
 
 1.  [Intro to R](http://www.youtube.com/playlist?list=PLOU2XLYxmsIK9qQfztXeybpHvru-TrqAP)

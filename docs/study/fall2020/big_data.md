@@ -5,16 +5,20 @@ title: "622 гр., все. Big data (в рамках курса Научная �
 **Место и время проведения:** пятница, 17:00, дистанционно.  
 **Преподаватели:** Гученко Роман Александрович  
 
+
 ### Устанавливаем ПО
+
 
 Для занятий нам понадобятся Hadoop и Hive.  
 Согласно опросу, Windows 10 - это выбор большинства, так что инструкция писалась с акцентом на Windows.
 
+
 #### Hadoop
+
 
 ##### Windows 10
 
-Вот неплохая инструкция (сам воспользовался именно ей):  
+ Вот неплохая инструкция (сам воспользовался именно ей):  
 <https://kontext.tech/column/hadoop/447/install-hadoop-330-on-windows-10-step-by-step-guide>  
 Установка Hadoop на Windows сопряжена с некоторыми нюансами.  
 Обратите внимание, что нужно будет поставить native IO binary, которые не включены в комплект (шаг 3 в инструкции).  
@@ -29,12 +33,16 @@ title: "622 гр., все. Big data (в рамках курса Научная �
 
 Можно также попробовать через docker, но с ним на Windows сложности.
 
+
 ##### Linux
+
 
 Официальная инструкция (не пробовал):  
 <https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-common/SingleCluster.html>
 
+
 ##### Mac
+
 
 Не сильно отличается от варианта на Linux.  
 Проще всего ставить через brew install.  
@@ -42,7 +50,9 @@ title: "622 гр., все. Big data (в рамках курса Научная �
 https://medium.com/beeranddiapers/installing-hadoop-on-mac-a9a3649dbc4d  
 Настройки (core-site.xml, hdfs-site.xml, mapred-site.xml, yarn-site.xml) лучше взять из официальной инструкции для Linux.
 
+
 ##### Проверка установки
+
 
 Пример для Windows.  
 Запустите консоль (cmd в поиске “Пуска”) от имени администратора и перейдите в %HADOOP_HOME%\sbin.  
@@ -68,9 +78,12 @@ yarn jar G:\BigData\hadoop-3.3.0\share\hadoop\mapreduce\hadoop-mapreduce-example
 <http://localhost:8088/cluster/apps/RUNNING>  
 и проследить за процессом вычисления пи с точки зрения созданного вами one-node кластера.
 
+
 #### Hive
 
+
 ##### Windows 10
+
 
 Еще одна хорошая инструкция:  
 <https://kontext.tech/column/hadoop/459/apache-hive-312-installation-on-windows-10>  
@@ -84,18 +97,24 @@ yarn jar G:\BigData\hadoop-3.3.0\share\hadoop\mapreduce\hadoop-mapreduce-example
 Дальше проверьте его по инструкции, создав тестовую таблицу.  
 Если все в порядке, этот процесс создания таблицы должен отобразиться в jobtracker’е.
 
+
 ##### Linux
+
 
 Не пробовал:  
 <https://www.edureka.co/blog/apache-hive-installation-on-ubuntu>
 
+
 ##### Mac
+
 
 <https://dbmstutorials.com/hive/hive-setup-on-mac.html>
 
 В качестве базы для метаданных предлагаю использовать derby (как и в других инструкциях).
 
+
 #### Cloudera Quickstart VM
+
 
 Если все тщетно и установить Hadoop с Hive’ом не получается (или если просто лень), то на помощь придет Cloudera Quickstart VM.
 
@@ -109,11 +128,15 @@ yarn jar G:\BigData\hadoop-3.3.0\share\hadoop\mapreduce\hadoop-mapreduce-example
 
 Проблема в том, что Cloudera Quickstart VM уже не поддерживается и ссылка на официальный сайт уже не очень официальная…
 
+
 #### Google Cloud
+
 
 Здесь, возможно, появится инструкция по пользованию пробной версией dataproc на Google Cloud.
 
+
 #### glogg
+
 
 Как бонус, можно установить glogg - программу для чтения больших файлов.
 
@@ -128,4 +151,6 @@ glogg же индексирует файл при открытии и загру
 
 Правда редактировать их он не позволяет.
 
+
 ### Темы занятий
+

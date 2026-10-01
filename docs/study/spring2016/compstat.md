@@ -2,14 +2,18 @@
 title: "Спецкурс «Выч. методы и пакеты в статистическом исследовании» (4 курс)"
 ---
 
-**Место и время проведения:** вторник, 3 пара, ауд 2412; 4 пара, ауд 2412  
+ **Место и время проведения:** вторник, 3 пара, ауд 2412; 4 пара, ауд 2412  
 **Преподаватель:** Коробейников Антон Иванович  
 **Преподаватель:** Шлемов Александр Юрьевич  
-—-
+
+
+---
 
 ## Программа курса
 
+
 ### Задачи
+
 
 1.  Вычисление интеграла методом Монте-Карло
 2.  Оценки максимального правдоподобия
@@ -17,7 +21,9 @@ title: "Спецкурс «Выч. методы и пакеты в статис�
 4.  Моделирование. Адаптивный метод отбора
 5.  [Support Vector Machines](../../assets/study/spring2016/compstat/svm.pdf)
 
+
 ### (Возможные) будущие задачи
+
 
 1.  Бутстреп
 2.  Вычисление стационарного распределения марковской цепи
@@ -32,9 +38,10 @@ title: "Спецкурс «Выч. методы и пакеты в статис�
 11. Hidden Markov Models
 12. …
 
+
 ## Prerequisites
 
-Дистрибутив R:
+ Дистрибутив R:
 
 1.  [Windows](http://cran.r-project.org/bin/windows/base/R-3.2.3-win.exe)
 2.  [Linux](http://cran.r-project.org/bin/linux)
@@ -46,9 +53,13 @@ title: "Спецкурс «Выч. методы и пакеты в статис�
 2.  [Tinn-R (Windows)](http://www.sciviews.org/Tinn-R/)
 3.  [RKWard (Linux)](http://rkward.sourceforge.net/)
 
+
 ## Рекомендуемая литература
 
+ 
+
 ### Книги
+
 
 1.  **Peter Dalgaard**. *Introductory Statistics with R*. Springer, 2002.
 2.  **John Maindonald and John Braun**. *Data Analysis and Graphics Using R*. Cambridge University Press, Cambridge, 2003.
@@ -58,7 +69,9 @@ title: "Спецкурс «Выч. методы и пакеты в статис�
 6.  **Голяндина Н.Э.** *Метод «Гусеница»-SSA: анализ временных рядов*: Учеб. пособие. СПб: Изд-во СПбГУ, 2004. 76 с.[PDF](http://www.gistatgroup.com/gus/ssa_an.pdf)
 7.  **Шипунов А.Б., Балдин Е.М., Волкова П.А., Коробейников А.И., Назарова С.А., Петров С.В., Суфиянов В.Г.** Наглядная статистика. Используем R! – М.: ДМК Пресс, 2012. – 298 с.
 
+
 ### Статьи
+
 
 1.  **John Maindonald**. *Using R for Data Analysis and Graphics - Introduction, Examples and Commentary*. [PDF](http://cran.r-project.org/doc/contrib/usingR.pdf)
 2.  **John Verzani**. *Simple R*. [PDF](http://cran.r-project.org/doc/contrib/Verzani-SimpleR.pdf)
@@ -69,7 +82,9 @@ title: "Спецкурс «Выч. методы и пакеты в статис�
 7.  **Patrick Burns** *The R Inferno* [PDF](http://www.burns-stat.com/pages/Tutor/R_inferno.pdf)
 8.  **Patrick Burns** *S Poetry* [PDF](http://www.burns-stat.com/pages/Spoetry/Spoetry.pdf)
 
+
 ## Задачи
+
 
 Условные обозначения:
 
@@ -77,8 +92,8 @@ title: "Спецкурс «Выч. методы и пакеты в статис�
 
 ** Внимание:** Если напротив Вашей фамилии отсутствует назначенное задание, то для его получения Вам следует отправить запрос по почте.
 
-|              | [Integral](../../assets/study/spring2016/compstat/integral.pdf) | [MLE](../../assets/study/spring2016/compstat/mle.pdf) | [EM](../../assets/study/spring2016/compstat/em.pdf) | [Simulation](../../assets/study/spring2016/compstat/simulation.pdf) |   SVM    | Total   |
-|:------------:|----------|----------|----------|----------|:--------:|---------|
+|              | [Integral](../../assets/study/spring2016/compstat/integral.pdf) | [MLE](../../assets/study/spring2016/compstat/mle.pdf) | [EM](../../assets/study/spring2016/compstat/em.pdf) | [Simulation](../../assets/study/spring2016/compstat/simulation.pdf) |   SVM    | Total    |
+|:------------:|----------|----------|----------|----------|:--------:|----------|
 |   Грязнов    | \+       | \+       | \+       | \+       |    \+    | 
 
 5
@@ -131,7 +146,7 @@ title: "Спецкурс «Выч. методы и пакеты в статис�
 
 4
 
-  |
+ |
 |   Белоусов   | \+       |       \+ |    \+    | 9        |    \+    | 
 
 4

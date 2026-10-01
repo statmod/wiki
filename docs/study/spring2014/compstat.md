@@ -2,14 +2,18 @@
 title: "Спецкурс «Выч. методы и пакеты в статистическом исследовании» (4 курс)"
 ---
 
-**Место и время проведения:** вторник, 3 пара, ауд TBA; 4-5 пары, ауд TBA  
+ **Место и время проведения:** вторник, 3 пара, ауд TBA; 4-5 пары, ауд TBA  
 **Преподаватель:** Коробейников Антон Иванович  
 **Преподаватель:** Шлемов Александр Юрьевич  
-—-
+
+
+---
 
 ## Программа курса
 
+
 ### Темы состоявшихся занятий
+
 
 1.  Введение. Краткий обзор. Базовые операции: понятие “workspace”, присваивание, просмотр списка переменных, удаление переменных из workspace’а. Функции c() и seq(). Использование встроенной справки. // (11.02.2014) //
 2.  Объекты R. Общие свойства (mode, length). Основные типы объектов: vector, matrix, data frame, list, expression. Конверсия объектов друг в друга. // (11.02.2014) //
@@ -28,9 +32,12 @@ title: "Спецкурс «Выч. методы и пакеты в статис�
 15. Векторизация. Эффективная работа с памятью // (25.02.2014) //
 16. Нахождение (локальных) экстремумов функций // (25.02.2014) //
 
+
 ### Темы будущих занятий
 
+
 ### Задачи
+
 
 1.  Вычисление стационарного распределения марковской цепи (Task 0)
 2.  Вычисление интеграла методом Монте-Карло (Task 1)
@@ -43,7 +50,9 @@ title: "Спецкурс «Выч. методы и пакеты в статис�
 9.  Линейные модели I (Task 8)
 10. Линейные модели II (Task 9)
 
+
 ### (Возможные) будущие задачи
+
 
 1.  Проверка статистических гипотез
 2.  Кластерный анализ
@@ -55,9 +64,10 @@ title: "Спецкурс «Выч. методы и пакеты в статис�
 8.  Hidden Markov Models
 9.  …
 
+
 ## Prerequisites
 
-Дистрибутив R:
+ Дистрибутив R:
 
 1.  [Windows](http://cran.r-project.org/bin/windows/base/R-3.0.2-win.exe)
 2.  [Linux](http://cran.r-project.org/bin/linux)
@@ -70,9 +80,13 @@ title: "Спецкурс «Выч. методы и пакеты в статис�
 2.  [Tinn-R (Windows)](http://www.sciviews.org/Tinn-R/)
 3.  [RKWard (Linux)](http://rkward.sourceforge.net/)
 
+
 ## Рекомендуемая литература
 
+ 
+
 ### Книги
+
 
 1.  **Peter Dalgaard**. *Introductory Statistics with R*. Springer, 2002.
 2.  **John Maindonald and John Braun**. *Data Analysis and Graphics Using R*. Cambridge University Press, Cambridge, 2003.
@@ -82,7 +96,9 @@ title: "Спецкурс «Выч. методы и пакеты в статис�
 6.  **Голяндина Н.Э.** *Метод «Гусеница»-SSA: анализ временных рядов*: Учеб. пособие. СПб: Изд-во СПбГУ, 2004. 76 с.[PDF](http://www.gistatgroup.com/gus/ssa_an.pdf)
 7.  **Шипунов А.Б., Балдин Е.М., Волкова П.А., Коробейников А.И., Назарова С.А., Петров С.В., Суфиянов В.Г.** Наглядная статистика. Используем R! – М.: ДМК Пресс, 2012. – 298 с.
 
+
 ### Статьи
+
 
 1.  **John Maindonald**. *Using R for Data Analysis and Graphics - Introduction, Examples and Commentary*. [PDF](http://cran.r-project.org/doc/contrib/usingR.pdf)
 2.  **John Verzani**. *Simple R*. [PDF](http://cran.r-project.org/doc/contrib/Verzani-SimpleR.pdf)
@@ -93,7 +109,9 @@ title: "Спецкурс «Выч. методы и пакеты в статис�
 7.  **Patrick Burns** *The R Inferno* [PDF](http://www.burns-stat.com/pages/Tutor/R_inferno.pdf)
 8.  **Patrick Burns** *S Poetry* [PDF](http://www.burns-stat.com/pages/Spoetry/Spoetry.pdf)
 
+
 ## Задачи
+
 
 Условные обозначения:
 

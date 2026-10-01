@@ -2,17 +2,22 @@
 title: "Спецкурс «Выч. методы и пакеты в статистическом исследовании» (4 курс)"
 ---
 
-**Место и время проведения:** среда, 1 пара (ауд. 2514, по знаменателю), 2 пара (ауд. 2514), 3 пара (ауд. 2446).  
+ **Место и время проведения:** среда, 1 пара (ауд. 2514, по знаменателю), 2 пара (ауд. 2514), 3 пара (ауд. 2446).  
 **Преподаватель:** Коробейников Антон Иванович  
-—-
+
+
+---
 
 ## Введение
 
-FIXME
+ FIXME
+
 
 ## Программа курса
 
+
 ### Темы состоявшихся занятий
+
 
 1.  Введение. Краткий обзор. Базовые операции: понятие “workspace”, присваивание, просмотр списка переменных, удаление переменных из workspace’а. Функции c() и seq(). Использование встроенной справки. // (11.02.2009) //
 2.  Объекты R. Общие свойства (mode, length). Основные типы объектов: vector, matrix, data frame, list, expression. Конверсия объектов друг в друга. // (11.02.2009, 18.02.2009) //
@@ -29,9 +34,12 @@ FIXME
 13. Отладка. Функции debug, browser, traceback. // (04.03.2009) //
 14. Векторизация. Эффективная работа с памятью. // (04.03.2009) //
 
+
 ### Темы будущих занятий
 
+
 ### Задачи
+
 
 1.  Вычисление стационарного распределения марковской цепи (Problem 0, 25.02.2009)
 2.  Вычисление интеграла методом Монте-Карло (Problem 1, 04.03.2009)
@@ -43,14 +51,17 @@ FIXME
 8.  Спектральный анализ и фильтрация :) (Problem7, 15.04.2009)
 9.  Кластерный анализ (Problem 8, 22.04.2009)
 
+
 ### (Возможные) будущие задачи
+
 
 1.  Планирование эксперимента
 2.  …
 
+
 ## Prerequisites
 
-Дистрибутив R:
+ Дистрибутив R:
 
 1.  [Windows](http://cran.r-project.org/bin/windows/base/R-2.8.0-win32.exe)
 2.  [Linux](http://cran.r-project.org/bin/linux)
@@ -62,9 +73,13 @@ FIXME
 2.  [SciViews-K (Windows, Linux, MacOS X)](http://www.sciviews.org/SciViews-K/index.html)
 3.  [RKWard (Linux)](http://rkward.sourceforge.net/)
 
+
 ## Рекомендуемая литература
 
+ 
+
 ### Книги
+
 
 1.  **Peter Dalgaard**. *Introductory Statistics with R*. Springer, 2002.
 2.  **John Maindonald and John Braun**. *Data Analysis and Graphics Using R*. Cambridge University Press, Cambridge, 2003.
@@ -73,7 +88,9 @@ FIXME
 5.  **Ермаков С.М.** *Статистическое моделирование, часть II* [PDF](../../assets/study/books/mmm_part2.pdf)
 6.  **Голяндина Н.Э.** *Метод «Гусеница»-SSA: анализ временных рядов*: Учеб. пособие. СПб: Изд-во СПбГУ, 2004. 76 с.[PDF](http://www.gistatgroup.com/gus/ssa_an.pdf)
 
+
 ### Статьи
+
 
 1.  **John Maindonald**. *Using R for Data Analysis and Graphics - Introduction, Examples and Commentary*. [PDF](http://cran.r-project.org/doc/contrib/usingR.pdf)
 2.  **John Verzani**. *Simple R*. [PDF](http://cran.r-project.org/doc/contrib/Verzani-SimpleR.pdf)
@@ -82,7 +99,9 @@ FIXME
 5.  **Е.М. Балдин, А.И. Коробейников, А.Б. Шипунов** *Анализ данных с R* [www](http://www.inp.nsk.su/~baldin/DataAnalysis/)
 6.  **А.И. Коробейников** *Оценки максимального правдоподобия в условиях цензурирования на базе EM-алгоритма* [PDF](../../assets/study/spring2008/em.pdf)
 
+
 ## Задачи
+
 
 Условные обозначения:
 
@@ -105,9 +124,9 @@ FIXME
 |  Тимофеев И.  |    \+     |    \+     |    \+     |         \+         |                |
 | Трубников В.  |    \+     |    \+     |    \+     |         \+         |       \+       |
 
-|               |                |          |           |          |             |
-|:-------------:|:--------------:|:--------:|:---------:|:--------:|:-----------:|
-|               | Problem 5 [^2] | [Problem 6](../../assets/study/spring2009/compstat/ssatask.pdf) | Problem 7 | [Problem 8](../../assets/study/spring2009/compstat/cltask.pdf) |   Допуск    |
+|               |                |          |           |          |              |
+|:-------------:|:--------------:|:--------:|:---------:|:--------:|:------------:|
+|               | Problem 5 [^2] | [Problem 6](../../assets/study/spring2009/compstat/ssatask.pdf) | Problem 7 | [Problem 8](../../assets/study/spring2009/compstat/cltask.pdf) |    Допуск    |
 | Андрющенко А. |       \+       |    \+    |    \+     |    \+    |   
 
 ✔

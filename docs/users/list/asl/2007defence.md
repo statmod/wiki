@@ -22,4 +22,3 @@ title: "Защита-2007. Первый день"
 
 ![rimg2474.jpg](../../../assets/users/list/asl/2007defence/images/rimg2474.jpg)
 
-

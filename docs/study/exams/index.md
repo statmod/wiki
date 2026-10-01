@@ -8,8 +8,9 @@ title: "Расписание экзаменов"
 522 <https://timetable.spbu.ru/MATH/StudentGroupEvents/Attestation/13711>  
 422 <https://timetable.spbu.ru/MATH/StudentGroupEvents/Attestation/13671>  
 322 <https://timetable.spbu.ru/MATH/StudentGroupEvents/Attestation/13655>  
-—-
 
+
+---
 
 - [Официальное расписание зачетов и экзаменов. Лето-2010/11](summer11.md)
 - [Официальное расписание зачетов и экзаменов. Лето-2011/12](summer12.md)

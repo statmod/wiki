@@ -2,15 +2,20 @@
 title: "522 гр., по выбору. Спецкурс «Интеллектуальный анализ данных» (5 курс)"
 ---
 
-**Место и время проведения:** ?  
+ **Место и время проведения:** ?  
 **Преподаватель:** Гученко Роман Александрович  
-—-
+
+
+---
 
 ## Программа курса 2023
 
+
 ### Темы состоявшихся занятий
 
+
 ### Темы будущих занятий
+
 
 1.  [Линейные модели. Оценивание, проверка гипотез. Дисперсионный анализ как линейная модель. Анализ ковариаций](../../assets/study/spring2018/islr/03-regression.pdf)
 2.  [Простейшие задачи классификации. Логистическая регрессия. LDA, QDA, naive Bayes. Понятие ROC-кривой, AUC](../../assets/study/spring2018/islr/04-classification.pdf)
@@ -26,15 +31,17 @@ title: "522 гр., по выбору. Спецкурс «Интеллектуа�
 12. Методы уменьшения размерности - PCA, principal component regression, partial least squares
 13. Unsupervised learning. Кластеризация
 
+
 ## Textbook
 
-[Introduction to Statistical Learning with R v2](https://hastie.su.domains/ISLRv2_website.pdf)
+ [Introduction to Statistical Learning with R v2](https://hastie.su.domains/ISLRv2_website.pdf)
 
 [Supporting material for the book (incl. code)](https://trevorhastie.github.io/ISLR/)
 
+
 ## Онлайн-лекции
 
-Онлайн-лекции к курсу доступны на [Stanford Online](https://online.stanford.edu/courses/sohs-ystatslearning-statistical-learning) Содержание лекций (и соответствие с главами ISLR):
+ Онлайн-лекции к курсу доступны на [Stanford Online](https://online.stanford.edu/courses/sohs-ystatslearning-statistical-learning) Содержание лекций (и соответствие с главами ISLR):
 
 - Week 1: Introduction and Overview of Statistical Learning (Chapters 1-2)
 - Week 2: Linear Regression (Chapter 3)
@@ -46,7 +53,9 @@ title: "522 гр., по выбору. Спецкурс «Интеллектуа�
 - Week 8: Support Vector Machines (Chapter 9)
 - Week 9: Unsupervised Learning (Chapter 10)
 
+
 ## Домашние задания
+
 
 1.  Глава 3 ISLRv2. Индивидуальные задания после главы 3 (Regression), до 20.03
 2.  Глава 4 ISLRv2. Индивидуальные задания после главы 4 (Classification), до 27.03
@@ -55,9 +64,10 @@ title: "522 гр., по выбору. Спецкурс «Интеллектуа�
 5.  Глава 8 ISLRv2. Индивидуальные задания после главы 8 (Trees), до 17.04
 6.  Глава 9 ISLRv2. Индивидуальные задания после главы 9 (SVM), до 24.04
 
+
 ## Prerequisites
 
-Дистрибутив R:
+ Дистрибутив R:
 
 1.  [Windows](http://cran.r-project.org/bin/windows/base/R-4.2.2-win.exe)
 2.  [Linux](http://cran.r-project.org/bin/linux)
@@ -67,9 +77,13 @@ title: "522 гр., по выбору. Спецкурс «Интеллектуа�
 
 1.  [R Studio (Windows, Linux, MacOS X)](http://www.rstudio.org)
 
+
 ## Рекомендуемая литература
 
+ 
+
 ### Книги
+
 
 1.  **Peter Dalgaard**. *Introductory Statistics with R*. Springer, 2002.
 2.  **John Maindonald and John Braun**. *Data Analysis and Graphics Using R*. Cambridge University Press, Cambridge, 2003.
@@ -78,7 +92,9 @@ title: "522 гр., по выбору. Спецкурс «Интеллектуа�
 5.  **Шипунов А.Б., Балдин Е.М., Волкова П.А., Коробейников А.И., Назарова С.А., Петров С.В., Суфиянов В.Г.** Наглядная статистика. Используем R! – М.: ДМК Пресс, 2012. – 298 с. [PDF](http://ashipunov.info/shipunov/school/books/rbook.pdf)
 6.  **Роберт И. Кабаков** R в действии. Анализ и визуализация данных в R. – М.: ДМК Пресс, 2013. – 280 с.
 
+
 ### Статьи
+
 
 1.  **John Maindonald**. *Using R for Data Analysis and Graphics - Introduction, Examples and Commentary*. [PDF](http://cran.r-project.org/doc/contrib/usingR.pdf)
 2.  **John Verzani**. *Simple R*. [PDF](http://cran.r-project.org/doc/contrib/Verzani-SimpleR.pdf)

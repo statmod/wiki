@@ -4,11 +4,15 @@ title: "322 гр., спец. СМ. Спецкурс «Введение в обр
 
 **Место и время проведения:** вторник, вторая пара (11:15-12:50), ауд. 2446  
 **Преподаватель:** Коробейников Антон Иванович [^1]  
-—-
+
+
+---
 
 ## Программа курса
 
+
 ### Темы состоявшихся занятий
+
 
 1.  Введение. Краткий обзор. Базовые операции: понятие “workspace”, присваивание, просмотр списка переменных, удаление переменных из workspace’а. Функции c() и seq(). Использование встроенной справки.
 2.  Объекты R. Общие свойства (mode, length). Основные типы объектов: vector, factor, matrix, data frame, list, ts (time series), expression. Конверсия объектов друг в друга.
@@ -33,14 +37,17 @@ title: "322 гр., спец. СМ. Спецкурс «Введение в обр
 21. Пакет lattice. Функции типа identify(). [lattice.identify.R](../../assets/study/fall2009/intror/lattice.identify.r.txt)
 22. Системы рисования. Пакет ggplot [ggplot.zip](../../assets/study/fall2016/intror/ggplot.zip).
 
+
 ### Темы будущих занятий
+
 
 1.  Преобразование данных. Пакет plyr
 2.  Метод наименьших квадратов. Линейная регрессия
 
+
 ## Prerequisites
 
-Дистрибутив R:
+ Дистрибутив R:
 
 1.  [Windows](https://cran.r-project.org/bin/windows/base/R-4.0.2-win.exe)
 2.  [Linux](http://cran.r-project.org/bin/linux)
@@ -50,9 +57,13 @@ title: "322 гр., спец. СМ. Спецкурс «Введение в обр
 
 1.  [R Studio (Windows, Linux, MacOS X)](http://www.rstudio.org)
 
+
 ## Рекомендуемая литература
 
+ 
+
 ### Книги
+
 
 1.  **Peter Dalgaard**. *Introductory Statistics with R*. Springer, 2002.
 2.  **John Maindonald and John Braun**. *Data Analysis and Graphics Using R*. Cambridge University Press, Cambridge, 2003.
@@ -61,7 +72,9 @@ title: "322 гр., спец. СМ. Спецкурс «Введение в обр
 5.  **Шипунов А.Б., Балдин Е.М., Волкова П.А., Коробейников А.И., Назарова С.А., Петров С.В., Суфиянов В.Г.** Наглядная статистика. Используем R! – М.: ДМК Пресс, 2012. – 298 с. [PDF](http://ashipunov.info/shipunov/school/books/rbook.pdf)
 6.  **Роберт И. Кабаков** R в действии. Анализ и визуализация данных в R. – М.: ДМК Пресс, 2013. – 280 с.
 
+
 ### Статьи
+
 
 1.  **John Maindonald**. *Using R for Data Analysis and Graphics - Introduction, Examples and Commentary*. [PDF](http://cran.r-project.org/doc/contrib/usingR.pdf)
 2.  **John Verzani**. *Simple R*. [PDF](http://cran.r-project.org/doc/contrib/Verzani-SimpleR.pdf)
@@ -69,9 +82,10 @@ title: "322 гр., спец. СМ. Спецкурс «Введение в обр
 4.  **David Rossiter**. *Introduction to the R Project for Statistical Computing for Use at the ITC*. [PDF](http://cran.r-project.org/doc/contrib/Rossiter-RIntro-ITC.pdf)
 5.  **Е.М. Балдин, А.И. Коробейников, А.Б. Шипунов** *Анализ данных с R* [www](http://www.inp.nsk.su/~baldin/DataAnalysis/)
 
+
 ## Задачи
 
-Условные обозначения:
+ Условные обозначения:
 
 1.  Цифра в клетке - порядковый номер “подхода”. Наличие цифры означает, что решение было получено, **проверено**, и результат отослан обратно.
 2.  Решетка - задание запрошено и выдано, плюс - зачтено, звездочка - штраф, минус - хм, незачет ;-)
@@ -82,20 +96,22 @@ title: "322 гр., спец. СМ. Спецкурс «Введение в обр
 - Task 2: до 23:59 7.12
 - Task 3: до 23:59 14.12
 
-|           |        Task 1         |  Task 2   |   Task 3   | Data      |
-|:---------:|:---------------------:|:---------:|:----------:|:----------|
-| Айнабеков |          \+           |    \+     |    +/+     | RoadCrash |
-| Васильцов |          \+           |    \+     |    +/+     | Crime     |
-| Веселова  |          \+           |    \+     |    +/+     | IMDB      |
-| Григорьев |          \+           |    \+     |    +/+     | STAR      |
-|  Логинов  |          \+           |    \+     |    +/+     | UFO       |
+|           |        Task 1         |   Task 2   |   Task 3   | Data      |
+|:---------:|:---------------------:|:----------:|:----------:|:----------|
+| Айнабеков |          \+           |     \+     |    +/+     | RoadCrash |
+| Васильцов |          \+           |     \+     |    +/+     | Crime     |
+| Веселова  |          \+           |     \+     |    +/+     | IMDB      |
+| Григорьев |          \+           |     \+     |    +/+     | STAR      |
+|  Логинов  |          \+           |     \+     |    +/+     | UFO       |
 | Положиев  |          \+           | *[Task 2](../../assets/study/fall2020/intror/task2-7.pdf) |    +/+     | SES       |
-|   Попов   |          \+           |    \+     |    +/+     | Airlines  |
+|   Попов   |          \+           |     \+     |    +/+     | Airlines  |
 | Саттаров  | 1 (10.11.2020, 01:53) | *[Task 2](../../assets/study/fall2020/intror/task2-6.pdf) | *[Task 3](dataprog/creditcard.md) |           |
-|   Сенов   |          \+           |    \+     |    +/+     | Izbirkom  |
-| Дядичкин  |          \+           |    \+     |    +/+     | Films     |
+|   Сенов   |          \+           |     \+     |    +/+     | Izbirkom  |
+| Дядичкин  |          \+           |     \+     |    +/+     | Films     |
+
 
 ## Разное
+
 
 1.  [Intro to R](http://www.youtube.com/playlist?list=PLOU2XLYxmsIK9qQfztXeybpHvru-TrqAP)
 

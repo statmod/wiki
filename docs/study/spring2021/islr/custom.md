@@ -4,15 +4,17 @@ title: "Персональные задания по курсу \"Интелле
 
 ## Робастная регрессия
 
-Задание было дано
+ Задание было дано
+
 
 ## Классификация
 
-Using the Auto data set, fit classification models in order to predict whether a given auto has the mileage per gallon above or below the median. Explore logistic regression, LDA, and QDA models using various subsets of the predictors. Describe your findings.
+ Using the Auto data set, fit classification models in order to predict whether a given auto has the mileage per gallon above or below the median. Explore logistic regression, LDA, and QDA models using various subsets of the predictors. Describe your findings.
+
 
 ## Регуляризация
 
-We have seen that as the number of features used in a model increases, the training error will necessarily decrease, but the test error may not.
+ We have seen that as the number of features used in a model increases, the training error will necessarily decrease, but the test error may not.
 
 1.  Generate a data set with some number of features and n = 5000 observations, and an associated quantitative response vector generated via the linear model with some coefficients set exactly to zero.
 2.  Split your data set into a training set containing 500 observations and a test set containing 4500 observations.
@@ -22,11 +24,14 @@ We have seen that as the number of features used in a model increases, the train
 6.  How does the model at which the test set MSE is minimized compare to the true model used to generate the data? Comment on the coefficient values.
 7.  Study the MSE for the coefficient estimates. Compare with the MSE of the model fit. Explain your findings.
 
+
 ## Деревья
 
-Apply boosting, bagging, and random forests to a data set of your choice. Be sure to fit the models on a training set and to evaluate their performance on a test set. How accurate are the results compared to simple methods like linear or logistic regression? Which of these approaches yields the best performance? Justify your choice of the dataset. Report the most significant features (where possible). Compare with the results obtained using regularization.
+ Apply boosting, bagging, and random forests to a data set of your choice. Be sure to fit the models on a training set and to evaluate their performance on a test set. How accurate are the results compared to simple methods like linear or logistic regression? Which of these approaches yields the best performance? Justify your choice of the dataset. Report the most significant features (where possible). Compare with the results obtained using regularization.
+
 
 ## SVM
+
 
 1.  Generate a simulated two-class data set with 100 observations and two features in which there is a visible but non-linear separation between the two classes. Show that in this setting, a support vector machine with a polynomial kernel (with degree greater than 1) or a radial kernel will outperform a support vector classifier on the training data. Which technique performs best on the test data? Make plots and report training and test error rates in order to back up your assertions.
 2.  Do the same, but now build an example where radial kernel outperforms a polynomial one. Explain your findings.

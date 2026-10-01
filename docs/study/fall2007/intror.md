@@ -2,20 +2,25 @@
 title: "Спецкурс «Введение в обработку данных» (3 курс)"
 ---
 
-**Место и время проведения:** четверг, вторая пара (11:15-12:50), ауд. 2444-II (дальняя).  
+ **Место и время проведения:** четверг, вторая пара (11:15-12:50), ауд. 2444-II (дальняя).  
 **Преподаватель:** Голяндина Нина Эдуардовна [^1]  
 **Преподаватель:** Коробейников Антон Иванович [^2]  
-—-
+
+
+---
 
 ## Введение
 
-FIXME
+ FIXME
+
 
 ## Программа курса
 
-//Курс в некотором смысле «экспериментальный»: программа может (и будет) менятся во время семестра //
+ //Курс в некотором смысле «экспериментальный»: программа может (и будет) менятся во время семестра //
+
 
 ### Темы состоявшихся занятий
+
 
 1.  Введение. Краткий обзор. Базовые операции: понятие “workspace”, присваивание, просмотр списка переменных, удаление переменных из workspace’а. Функции c() и seq(). Использование встроенной справки. *(27.09.2007)*
 2.  Объекты R. Общие свойства (mode, length). Основные типы объектов: vector, factor, matrix, data frame, list, ts (time series), expression. Конверсия объектов друг в друга. *(27.09.2007, 04.10.2007)*
@@ -31,40 +36,50 @@ FIXME
 12. Распределения. Функции распределения, плотности. Моделирование. Функции “d”, “p”, “q”, “r”. *(08.11.2007)*
 13. Метод наименьших квадратов. Линейная регрессия. *(08.11.2007, 15.11.2007)*
 
-### Темы будущих занятий
+
+### Темы  будущих занятий
+
 
 1.  Низкоуровневые графические функции: points, lines, text, mtext, segments, arrows, axes, legend, title. Графические параметры.
 2.  Пакеты grid и lattice.
 3.  Циклы и векторизация. Написание скриптов R [^3].
 4.  …
 
+
 ## Prerequisites
 
-Дистрибутив R:
+ Дистрибутив R:
 
 1.  [Windows](http://cran.r-project.org/bin/windows/base/R-2.6.0-win32.exe)
 2.  [Linux](http://cran.r-project.org/bin/linux)
 3.  [MacOS X](http://cran.r-project.org/bin/macosx/)
 
+
 ## Рекомендуемая литература
 
+ 
+
 ### Книги
+
 
 1.  **Peter Dalgaard**. *Introductory Statistics with R*. Springer, 2002.
 2.  **John Maindonald and John Braun**. *Data Analysis and Graphics Using R*. Cambridge University Press, Cambridge, 2003.
 3.  **John Verzani**. *Using R for Introductory Statistics*. Chapman & Hall/CRC, Boca Raton, FL, 2005.
 4.  **Paul Murrell**. *R Graphics*. Chapman & Hall/CRC, Boca Raton, FL, 2005.
 
+
 ### Статьи
+
 
 1.  **John Maindonald**. *Using R for Data Analysis and Graphics - Introduction, Examples and Commentary*. [PDF](http://cran.r-project.org/doc/contrib/usingR.pdf)
 2.  **John Verzani**. *Simple R*. [PDF](http://cran.r-project.org/doc/contrib/Verzani-SimpleR.pdf)
 3.  **Petra Kuhnert and Bill Venables**. *An Introduction to R: Software for Statistical Modelling & Computing*. [ZIP](http://cran.r-project.org/doc/contrib/Kuhnert+Venables-R_Course_Notes.zip)
 4.  **David Rossiter**. *Introduction to the R Project for Statistical Computing for Use at the ITC*. [PDF](http://cran.r-project.org/doc/contrib/Rossiter-RIntro-ITC.pdf)
 
+
 ## Задачи
 
-Условные обозначения:
+ Условные обозначения:
 
 1.  Цифра в клетке - порядковый номер “подхода”. Наличие цифры означает, что решение было получено, **проверено**, и результат отослан обратно.
 2.  Плюс - зачет, звездочка - штраф, минус - хм, незачет ;-)
@@ -80,8 +95,10 @@ FIXME
 | Фандеев Д.  |         \+         |  \+   |  -   |              - |     ✘ |
 | Юдичев П.   | 2* (31.10, 21:02) |  -*  |  -   |              - |     ✘ |
 
+
 ## Разное
 
+ 
 
 <table border=0 style="background-color: #fff; padding: 5px;" cellspacing=0>
   <tr><td>

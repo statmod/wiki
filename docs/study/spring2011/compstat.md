@@ -8,10 +8,15 @@ title: "Спецкурс «Выч. методы и пакеты в статис�
 
 **Преподаватель:** Шлемов Александр Юрьевич   
 
-----
+
+---
 
 ## Программа курса
+
+
 ### Темы состоявшихся занятий
+
+
   - Введение. Краткий обзор. Базовые операции: понятие "workspace", присваивание, просмотр списка переменных, удаление переменных из workspace'а. Функции c() и seq(). Использование встроенной справки. * (09.02.2011) *
   - Объекты R. Общие свойства (mode, length). Основные типы объектов: vector, matrix, data frame, list, expression. Конверсия объектов друг в друга. * (09.02.2011) *
   - Основные операции (арифметика, логические операции). Проверка равенства (==, identical, all.equal). Индексирование "векторных" переменных (включая именованные индексы). * (09.02.2011) *
@@ -29,8 +34,13 @@ title: "Спецкурс «Выч. методы и пакеты в статис�
   - Векторизация. Эффективная работа с памятью.  * (09.03.2011) *
   - Нахождение (локальных) экстремумов функций.  * (09.03.2011) *
 
+
 ### Темы будущих занятий
+
+
 ### Задачи
+
+
   - Вычисление стационарного распределения марковской цепи.  * (Problem 0, 09.03.2011) *
   - Моделирование. Адаптивный метод отбора.  * (Problem 1, 09.03.2011) *
   - Вычисление интеграла методом Монте-Карло. * (Problem 2, 23.03.2011) *
@@ -45,6 +55,8 @@ title: "Спецкурс «Выч. методы и пакеты в статис�
 
 
 ### (Возможные) будущие задачи
+
+
   - Моделирование. Markov Chain Monte-Carlo. Метод Метрополиса-Хастингса. Метод Гиббса.
   - Логистическая и нелинейная регрессия
   - Планирование эксперимента
@@ -52,6 +64,8 @@ title: "Спецкурс «Выч. методы и пакеты в статис�
 
 
 ## Prerequisites
+
+
 Дистрибутив R:
   - [Windows](http://cran.r-project.org/bin/windows/base/R-2.12.1-win.exe)
   - [Linux](http://cran.r-project.org/bin/linux)
@@ -62,8 +76,13 @@ title: "Спецкурс «Выч. методы и пакеты в статис�
   - [SciViews-K (Windows, Linux, MacOS X)](http://www.sciviews.org/SciViews-K/index.html)
   - [RKWard (Linux)](http://rkward.sourceforge.net/)
 
+
 ## Рекомендуемая литература
+
+
 ### Книги
+
+
   - **Peter Dalgaard**. *Introductory Statistics with R*. Springer, 2002.
   - **John Maindonald and John Braun**. *Data Analysis and Graphics Using R*. Cambridge University Press, Cambridge, 2003.
   - **John Verzani**. *Using R for Introductory Statistics*. Chapman & Hall/CRC, Boca Raton, FL, 2005.
@@ -73,6 +92,8 @@ title: "Спецкурс «Выч. методы и пакеты в статис�
 
 
 ### Статьи
+
+
   - **John Maindonald**. *Using R for Data Analysis and Graphics - Introduction, Examples and Commentary*. [PDF](http://cran.r-project.org/doc/contrib/usingR.pdf)
   - **John Verzani**. *Simple R*.  [PDF](http://cran.r-project.org/doc/contrib/Verzani-SimpleR.pdf)
   - **Petra Kuhnert and Bill Venables**. *An Introduction to R: Software for Statistical Modelling & Computing*. [ZIP](http://cran.r-project.org/doc/contrib/Kuhnert+Venables-R_Course_Notes.zip) 
@@ -84,6 +105,8 @@ title: "Спецкурс «Выч. методы и пакеты в статис�
 
 
 ## Задачи
+
+
 Условные обозначения:
   - Решетка - задание запрошено и выдано, плюс - зачтено, звездочка - штраф, минус - хм, незачет 
 Кроме того, пишется дата и время.
@@ -159,4 +182,6 @@ title: "Спецкурс «Выч. методы и пакеты в статис�
 
 
 ## Разное
+
+
 Список рассылки: [http://groups.google.com/a/statmod.ru/group/r-spring-2011](http://groups.google.com/a/statmod.ru/group/r-spring-2011)

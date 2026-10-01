@@ -10,6 +10,8 @@ repo_name: statmod/wiki
 theme:
   name: material
   language: ru
+  favicon: favicon.ico
+  logo: statmod_logo.gif
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
@@ -54,10 +56,10 @@ extra:
   social: []
 
 # Known missing media from the original DokuWiki dump (Cyrillic filenames, etc.)
-validation:
-  omitted_files: info
-  absolute_links: info
-  unrecognized_links: info
+# validation:
+#  omitted_files: info
+#  absolute_links: info
+#  unrecognized_links: info
 
 nav:
   - Home: index.md

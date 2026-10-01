@@ -2,14 +2,18 @@
 title: "Спецкурс «Выч. методы и пакеты в статистическом исследовании» (4 курс)"
 ---
 
-**Место и время проведения:** вторник, 3 пара, ауд 2412; 4 пары, ауд 2412, 2408  
+ **Место и время проведения:** вторник, 3 пара, ауд 2412; 4 пары, ауд 2412, 2408  
 **Преподаватель:** Коробейников Антон Иванович  
 **Преподаватель:** Шлемов Александр Юрьевич  
-—-
+
+
+---
 
 ## Программа курса
 
+
 ### Задачи
+
 
 1.  Вычисление интеграла методом Монте-Карло *(17.02.2015)*
 2.  Оценки максимального правдоподобия *(24.02.2015)*
@@ -18,7 +22,9 @@ title: "Спецкурс «Выч. методы и пакеты в статис�
 5.  Моделирование. Адаптивный метод отбора // (17.03.2015) //
 6.  Бутстреп // (24.03.2015) //
 
+
 ### (Возможные) будущие задачи
+
 
 1.  Вычисление стационарного распределения марковской цепи
 2.  Метод Гусеница-SSA
@@ -32,9 +38,10 @@ title: "Спецкурс «Выч. методы и пакеты в статис�
 10. Hidden Markov Models
 11. …
 
+
 ## Prerequisites
 
-Дистрибутив R:
+ Дистрибутив R:
 
 1.  [Windows](http://cran.r-project.org/bin/windows/base/R-3.1.2-win.exe)
 2.  [Linux](http://cran.r-project.org/bin/linux)
@@ -47,9 +54,13 @@ title: "Спецкурс «Выч. методы и пакеты в статис�
 2.  [Tinn-R (Windows)](http://www.sciviews.org/Tinn-R/)
 3.  [RKWard (Linux)](http://rkward.sourceforge.net/)
 
+
 ## Рекомендуемая литература
 
+ 
+
 ### Книги
+
 
 1.  **Peter Dalgaard**. *Introductory Statistics with R*. Springer, 2002.
 2.  **John Maindonald and John Braun**. *Data Analysis and Graphics Using R*. Cambridge University Press, Cambridge, 2003.
@@ -59,7 +70,9 @@ title: "Спецкурс «Выч. методы и пакеты в статис�
 6.  **Голяндина Н.Э.** *Метод «Гусеница»-SSA: анализ временных рядов*: Учеб. пособие. СПб: Изд-во СПбГУ, 2004. 76 с.[PDF](http://www.gistatgroup.com/gus/ssa_an.pdf)
 7.  **Шипунов А.Б., Балдин Е.М., Волкова П.А., Коробейников А.И., Назарова С.А., Петров С.В., Суфиянов В.Г.** Наглядная статистика. Используем R! – М.: ДМК Пресс, 2012. – 298 с.
 
+
 ### Статьи
+
 
 1.  **John Maindonald**. *Using R for Data Analysis and Graphics - Introduction, Examples and Commentary*. [PDF](http://cran.r-project.org/doc/contrib/usingR.pdf)
 2.  **John Verzani**. *Simple R*. [PDF](http://cran.r-project.org/doc/contrib/Verzani-SimpleR.pdf)
@@ -70,7 +83,9 @@ title: "Спецкурс «Выч. методы и пакеты в статис�
 7.  **Patrick Burns** *The R Inferno* [PDF](http://www.burns-stat.com/pages/Tutor/R_inferno.pdf)
 8.  **Patrick Burns** *S Poetry* [PDF](http://www.burns-stat.com/pages/Spoetry/Spoetry.pdf)
 
+
 ## Задачи
+
 
 Условные обозначения:
 

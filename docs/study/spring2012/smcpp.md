@@ -4,11 +4,15 @@ title: "Спец.выч.практ., 322 гр., спец. СМ"
 
 **Место и время проведения:**  
 **Преподаватель:** Голяндина Нина Эдуардовна  
-—-
+
+
+---
 
 ## Материалы по программированию и не только
 
+
 ### О большой программе
+
 
 [Общее задание](../../assets/study/spring2010/smcpp/task.pdf)
 
@@ -26,11 +30,14 @@ title: "Спец.выч.практ., 322 гр., спец. СМ"
 
 [Кое-что о структуре классов для программы](../../assets/study/spring2009/classesofprogram.pdf)
 
+
 ### Д/з
 
-1\. [String](../../assets/study/spring2009/string1.zip) - прототипы функций для реализации (чтобы не набирать).
+ 1. [String](../../assets/study/spring2009/string1.zip) - прототипы функций для реализации (чтобы не набирать).
+
 
 ### Уроки по Visual C++
+
 
 1.  [Создание приложения SDI](../../assets/study/spring2009/1first_step_sdi.pdf) (Single Document Interface)
 2.  [Работа с главным меню](../../assets/study/spring2009/2menu.pdf).
@@ -43,7 +50,9 @@ title: "Спец.выч.практ., 322 гр., спец. СМ"
 
 [Архив WORD-файлов с уроками](../../assets/study/spring2009/vc7lessons.zip)
 
+
 ### TEX (MIKTEX, LATEX)
+
 
 [Примеры по TEX](../../assets/study/spring2009/tex2009.zip) (начинать нужно с чтения readme и instr.txt)
 
@@ -60,7 +69,9 @@ title: "Спец.выч.практ., 322 гр., спец. СМ"
 3.  [LEd](http://www.latexeditor.org/) (free)
 4.  [TexMaker](http://www.xm1math.net/texmaker/) (free) - кросс-платформенный
 
+
 ### Статистика
+
 
 [Предварительный список вопросов этого года](../../assets/study/spring2013/smcpp/q2stat2013.pdf)
 

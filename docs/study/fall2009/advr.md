@@ -2,13 +2,17 @@
 title: "Спец. лабораторный выч. практикум (магистры, 2 курс)"
 ---
 
-**Место и время проведения:** четверг, третья пара (13:40-15:15), ауд. 4399  
+ **Место и время проведения:** четверг, третья пара (13:40-15:15), ауд. 4399  
 **Преподаватель:** Коробейников Антон Иванович  
-—-
+
+
+---
 
 ## Программа курса
 
+
 ### Темы состоявшихся занятий
+
 
 1.  Введение. Краткий обзор. Базовые операции: понятие “workspace”, присваивание, просмотр списка переменных, удаление переменных из workspace’а. Функции c() и seq(). Использование встроенной справки. // (03.09.2009) //
 2.  Объекты R. Общие свойства (mode, length). Основные типы объектов: vector, factor, matrix, data frame, list, ts (time series), expression. Конверсия объектов друг в друга. // (03.09.2009) //
@@ -33,16 +37,19 @@ title: "Спец. лабораторный выч. практикум (маги�
 21. Кластерный анализ // (26.11.2009) //
 22. Ядерные методы // (03.12.2009, 10.12.2009) //
 
-### Темы будущих занятий
+
+### Темы  будущих занятий
+
 
 1.  Дисперсионный анализ
 2.  Факторный анализ и метод главных компонент
 3.  Анализ временных рядов. Метод Гусеница-SSA
 4.  …
 
+
 ## Задачи
 
-Условные обозначения:
+ Условные обозначения:
 
 1.  Цифра в клетке - порядковый номер “подхода”. Наличие цифры означает, что решение было получено, **проверено**, и результат отослан обратно.
 2.  Решетка - задание запрошено и выдано, плюс - зачтено, звездочка - штраф, минус - хм, незачет ;-)
@@ -58,9 +65,10 @@ title: "Спец. лабораторный выч. практикум (маги�
 | Казакова О.  |  \+  | \#  |    \+     |        \+        | \#  | \+  |   \+    |   \+   |
 | Кузнецова А. |  \+  | \+  |    \+     |        \+        | \+  | \+  |   \+    |   \+   |
 
+
 ## Prerequisites
 
-Дистрибутив R:
+ Дистрибутив R:
 
 1.  [Windows](http://cran.r-project.org/bin/windows/base/R-2.9.2-win32.exe)
 2.  [Linux](http://cran.r-project.org/bin/linux)
@@ -72,16 +80,22 @@ title: "Спец. лабораторный выч. практикум (маги�
 2.  [SciViews-K (Windows, Linux, MacOS X)](http://www.sciviews.org/SciViews-K/index.html)
 3.  [RKWard (Linux)](http://rkward.sourceforge.net/)
 
+
 ## Рекомендуемая литература
 
+ 
+
 ### Книги
+
 
 1.  **Peter Dalgaard**. *Introductory Statistics with R*. Springer, 2002.
 2.  **John Maindonald and John Braun**. *Data Analysis and Graphics Using R*. Cambridge University Press, Cambridge, 2003.
 3.  **John Verzani**. *Using R for Introductory Statistics*. Chapman & Hall/CRC, Boca Raton, FL, 2005.
 4.  **Paul Murrell**. *R Graphics*. Chapman & Hall/CRC, Boca Raton, FL, 2005.
 
+
 ### Статьи
+
 
 1.  **John Maindonald**. *Using R for Data Analysis and Graphics - Introduction, Examples and Commentary*. [PDF](http://cran.r-project.org/doc/contrib/usingR.pdf)
 2.  **John Verzani**. *Simple R*. [PDF](http://cran.r-project.org/doc/contrib/Verzani-SimpleR.pdf)

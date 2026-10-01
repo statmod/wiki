@@ -4,11 +4,15 @@ title: "322 гр., спец. СМ. Спецкурс «Введение в обр
 
 **Место и время проведения:** четверг, вторая пара (11:15-12:50), ауд. 4526  
 **Преподаватель:** Коробейников Антон Иванович [^1]  
-—-
+
+
+---
 
 ## Программа курса
 
+
 ### Темы состоявшихся занятий
+
 
 1.  Введение. Краткий обзор. Базовые операции: понятие “workspace”, присваивание, просмотр списка переменных, удаление переменных из workspace’а. Функции c() и seq(). Использование встроенной справки.
 2.  Объекты R. Общие свойства (mode, length). Основные типы объектов: vector, factor, matrix, data frame, list, ts (time series), expression. Конверсия объектов друг в друга.
@@ -27,7 +31,9 @@ title: "322 гр., спец. СМ. Спецкурс «Введение в обр
 
     - 
 
+
 ### Темы будущих занятий
+
 
 1.  Высокоуровневые графические функции: barplot, hist, boxplot
 2.  Распределения. Функции распределения, плотности. Моделирование. Функции “d”, “p”, “q”, “r”.
@@ -42,9 +48,10 @@ title: "322 гр., спец. СМ. Спецкурс «Введение в обр
 11. Преобразование данных. Пакет plyr
 12. Метод наименьших квадратов. Линейная регрессия
 
+
 ## Prerequisites
 
-Дистрибутив R:
+ Дистрибутив R:
 
 1.  [Windows](https://cran.r-project.org/bin/windows/base/)
 2.  [Linux](http://cran.r-project.org/bin/linux)
@@ -54,9 +61,13 @@ title: "322 гр., спец. СМ. Спецкурс «Введение в обр
 
 1.  [R Studio (Windows, Linux, MacOS X)](http://www.rstudio.org)
 
+
 ## Рекомендуемая литература
 
+ 
+
 ### Книги
+
 
 1.  **Peter Dalgaard**. *Introductory Statistics with R*. Springer, 2002.
 2.  **John Maindonald and John Braun**. *Data Analysis and Graphics Using R*. Cambridge University Press, Cambridge, 2003.
@@ -65,7 +76,9 @@ title: "322 гр., спец. СМ. Спецкурс «Введение в обр
 5.  **Шипунов А.Б., Балдин Е.М., Волкова П.А., Коробейников А.И., Назарова С.А., Петров С.В., Суфиянов В.Г.** Наглядная статистика. Используем R! – М.: ДМК Пресс, 2012. – 298 с. [PDF](http://ashipunov.info/shipunov/school/books/rbook.pdf)
 6.  **Роберт И. Кабаков** R в действии. Анализ и визуализация данных в R. – М.: ДМК Пресс, 2013. – 280 с.
 
+
 ### Статьи
+
 
 1.  **John Maindonald**. *Using R for Data Analysis and Graphics - Introduction, Examples and Commentary*. [PDF](http://cran.r-project.org/doc/contrib/usingR.pdf)
 2.  **John Verzani**. *Simple R*. [PDF](http://cran.r-project.org/doc/contrib/Verzani-SimpleR.pdf)
@@ -73,9 +86,10 @@ title: "322 гр., спец. СМ. Спецкурс «Введение в обр
 4.  **David Rossiter**. *Introduction to the R Project for Statistical Computing for Use at the ITC*. [PDF](http://cran.r-project.org/doc/contrib/Rossiter-RIntro-ITC.pdf)
 5.  **Е.М. Балдин, А.И. Коробейников, А.Б. Шипунов** *Анализ данных с R* [www](http://www.inp.nsk.su/~baldin/DataAnalysis/)
 
+
 ## Задачи
 
-Условные обозначения:
+ Условные обозначения:
 
 1.  Цифра в клетке - порядковый номер “подхода”. Наличие цифры означает, что решение было получено, **проверено**, и результат отослан обратно.
 2.  Решетка - задание запрошено и выдано, плюс - зачтено, звездочка - штраф, минус - хм, незачет ;-)
@@ -86,19 +100,21 @@ title: "322 гр., спец. СМ. Спецкурс «Введение в обр
 - Task 2: 23:59 22.11
 - Task 3:
 
-|                 | Task 1  |        Task 2         |   Data    |
-|:---------------:|:-------:|:---------------------:|:---------:|
-|  Хромов Никита  |   \+    |          \+           | Airlines  |
-| Олейник Михаил  |   \+    |          \+           |   ATUS    |
-|  Потешкин Егор  |   \+    |          \+           |  Crimes   |
-| Филатова Арина  |   \+    |          \+           |    UFO    |
-|  Кахидзе Элэнэ  |   \+    | 2 (04.12.2022, 14:16) |   IMDB    |
-| Подлеснов Яков  |   \+    |          *+          | RoadCrash |
-| Булгакова Дарья |   \+    |          \+           |   STAR    |
-|   Салова Яна    |   \+    |          \+           |    SES    |
-| Киселев Михаил  | [chickweight.txt](../../assets/study/fall2022/intror/chickweight.txt) |        [8](../../assets/study/fall2022/intror/task2-8.pdf)        |           |
+|                 |  Task 1  |        Task 2         |   Data    |
+|:---------------:|:--------:|:---------------------:|:---------:|
+|  Хромов Никита  |    \+    |          \+           | Airlines  |
+| Олейник Михаил  |    \+    |          \+           |   ATUS    |
+|  Потешкин Егор  |    \+    |          \+           |  Crimes   |
+| Филатова Арина  |    \+    |          \+           |    UFO    |
+|  Кахидзе Элэнэ  |    \+    | 2 (04.12.2022, 14:16) |   IMDB    |
+| Подлеснов Яков  |    \+    |          *+          | RoadCrash |
+| Булгакова Дарья |    \+    |          \+           |   STAR    |
+|   Салова Яна    |    \+    |          \+           |    SES    |
+| Киселев Михаил  | [chickweight.txt](../../assets/study/fall2022/intror/chickweight.txt) |       [8](../../assets/study/fall2022/intror/task2-8.pdf)        |           |
+
 
 ## Разное
+
 
 1.  [Intro to R](http://www.youtube.com/playlist?list=PLOU2XLYxmsIK9qQfztXeybpHvru-TrqAP)
 

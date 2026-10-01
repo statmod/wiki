@@ -4,11 +4,12 @@ title: "522 гр., по выбору. Главные компоненты вре
 
 **Место и время проведения: ??? **  
 **Преподаватель:** Голяндина Нина Эдуардовна  
-—-
 
-------------------------------------------------------------------------
+
+---
 
 ### Литература и ссылки
+
 
 - Сайт, посвященный методу ["Гусеница"-SSA](http://gistatgroup.com/gus/), со ссылками на книги и статьи.  
 
@@ -39,7 +40,9 @@ Multivariate and 2D Extensions of Singular Spectrum Analysis with the Rssa Packa
 
 5\. Обзорная статья: Nina Golyandina “[Particularities and commonalities of singular spectrum analysis as a method of time series analysis and signal processing](https://arxiv.org/abs/1907.02579)”
 
+
 ##### Примерное содержание
+
 
 1.  Анализ временных рядов методом «Гусеница». Алгоритм.
 2.  Сильная и слабая разделимость рядов. Условия разделимости.
