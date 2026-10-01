@@ -1,0 +1,133 @@
+# In athletic events in which people of various ages participate, performance is
+# sometimes related to age. Multiplying factors are used to compare the
+# performance of a person of a given age to another person of different age. The
+# data features world records by age and distance in track and field.
+#
+# We split the records by distance, allowing us to compare the factors for several
+# distances:
+# > best.times <- read.table(...);
+# > by.dist <- split(best.times, as.factor(Dist));
+#
+# This returns a list of data frames, one for each distance. We can plot the times
+# for 800-meter run:
+# > plot(Time ~ age, by.dist[['800']])
+# (it's actually better to apply scale() first, so that we can compare times).
+#
+# Through age < 70 (remember the 'subset' option!), a linear regression model
+# seems to fit. Using above technique, compare the data for the 100-meter dash,
+# the 400-meter dash and the 10000-meter run. Are the slopes similar?
+
+"Dist" "Name" "Date" "Time" "Time.1" "age"
+"1" 100 "Lindford Christie" "09/23/95" 9.97 "9,97" 35
+"2" 100 "Gilles Echevin" "05/07/89" 10.93 "10,93" 40
+"3" 100 "Vic Oliver" "07/20/97" 11.36 "11,36" 45
+"4" 100 "Ronald Taylor" "08/21/84" 11.5 "11,50" 50
+"5" 100 "Ronald Taylor" "08/03/91" 11.57 "11,57" 55
+"6" 100 "Ronald Taylor" "06/04/94" 11.7 "11,70" 60
+"7" 100 "Allan Meddings" "10/15/93" 12.71 "12,71" 65
+"8" 100 "Jose Luis Ubarri" "07/16/95" 13.34 "13,34" 70
+"9" 100 "Fritz Assmy" "08/16/91" 13.64 "13,64" 75
+"10" 100 "Payton Jordan" "08/09/97" 14.42 "14,42" 80
+"11" 100 "Ahti Pajunen" "07/01/95" 17.56 "17,56" 85
+"12" 100 "Jing-Chang Wang" "01/01/87" 20.67 "20,67" 90
+"13" 100 "Mikko Salonen" "01/01/92" 38.58 "38,58" 95
+"14" 200 "Lindford Christie" "06/25/95" 20.11 "20,11" 35
+"15" 200 "Kevin Morgning" "07/23/97" 22.15 "22,15" 40
+"16" 200 "Stephen Peters" "09/18/99" 22.5 "22,50" 45
+"17" 200 "Ronald Taylor" "07/31/86" 22.91 "22,91" 50
+"18" 200 "Ronald Taylor" "07/24/89" 23.37 "23,37" 55
+"19" 200 "Ronald Taylor" "06/10/94" 24 "24,00" 60
+"20" 200 "Berthold Neumann" "08/18/96" 25.93 "25,93" 65
+"21" 200 "Wilhelm Selzer" "07/23/97" 27.44 "27,44" 70
+"22" 200 "Fritz Assmy" "07/05/90" 28.6 "28,60" 75
+"23" 200 "Payton Jordan" "08/10/97" 30.89 "30,89" 80
+"24" 200 "Friedrich Mahlo" "07/23/97" 36.52 "36,52" 85
+"25" 200 "Murthy Narayana" "07/01/91" 44.77 "44,77" 90
+"26" 200 "Richard Gathercole" "07/23/97" 44.24 "44,24" 95
+"27" 400 "James King" "05/25/84" 46.39 "46,39" 35
+"28" 400 "Manuel Ulacio" "01/01/81" 47.87 "47,87" 40
+"29" 400 "Fred Sowerby" "08/12/94" 50.2 "50,20" 45
+"30" 400 "Guido Muller" "06/03/89" 51.6 "51,60" 50
+"31" 400 "Ralph Romain" "07/22/90" 52.52 "52,52" 55
+"32" 400 "Ralf Romain" "07/22/95" 53.88 "53,88" 60
+"33" 400 "Berthold Neumann" "07/22/96" 57.52 "57,52" 65
+"34" 400 "Wilhelm Selzer" "07/26/97" 61.43 "1.01,43" 70
+"35" 400 "Fritz Assmy" "07/01/90" 68.24 "1.08,24" 75
+"36" 400 "Antonio Ant.da Forseca" "07/22/95" 78 "1.18,00" 80
+"37" 400 "Longino Perez" "12/05/87" 91.54 "1.31,54" 85
+"38" 400 "Murthy Narayana" "07/26/91" 119.76 "1.59,76" 90
+"39" 800 "Johnny Gray" "08/16/95" 103.36 "1.43,36" 35
+"40" 800 "Peter Browne" "06/11/90" 111.25 "1.51,25" 40
+"41" 800 "Ronald Mercelina" "07/07/91" 116.16 "1.56,16" 45
+"42" 800 "Ronald Mercelina" "06/16/96" 119.45 "1.59,45" 50
+"43" 800 "Tom Roberts" "08/01/89" 125.07 "2.05,07" 55
+"44" 800 "Derek Turnbull" "07/21/89" 132.62 "2.12,62" 60
+"45" 800 "Earl Fee" "07/18/95" 134.33 "2.14,33" 65
+"46" 800 "James Lytjen" "07/23/91" 147.57 "2.27,57" 70
+"47" 800 "Harold Chapson" "05/14/78" 160 "2.40,0" 75
+"48" 800 "Harold Chapson" "01/01/83" 169.04 "2.49,4" 80
+"49" 800 "Longino Perez" "11/29/87" 209.42 "3.29,42" 85
+"50" 800 "Paul Spangler" "06/10/89" 279.59 "4.39,59" 90
+"51" 800 "Herbert Kirk" "01/01/91" 362.94 "6.02,94" 95
+"52" 1500 "Mike Boit" "08/21/85" 213.91 "3.33,91" 35
+"53" 1500 "David Moorcroft" "06/19/93" 226.07 "3.46,7" 40
+"54" 1500 "Pete Molloy" "08/09/95" 238.03 "3.58,3" 45
+"55" 1500 "Tom Roberts" "03/22/84" 245.02 "4.05,2" 50
+"56" 1500 "Gunther Hesselmann" "06/23/81" 254.33 "4.14,33" 55
+"57" 1500 "Derek Turnbull" "08/05/89" 268.66 "4.28,66" 60
+"58" 1500 "Siem Herlaar" "07/16/94" 279.87 "4.39,87" 65
+"59" 1500 "Derek Turnbull" "07/26/97" 304.54 "5.04,54" 70
+"60" 1500 "Scotty Carter" "06/28/92" 328.05 "5.28,5" 75
+"61" 1500 "Ed Benham" "12/05/87" 364.28 "6.04,28" 80
+"62" 1500 "Longino Perez" "12/05/87" 423.38 "7.03,38" 85
+"63" 1500 "Paul Spangler" "06/10/89" 565.02 "9.25,2" 90
+"64" 1500 "Herb Kirk" "10/06/90" 833.08 "13.53,8" 95
+"65" 3000 "Driss El Himer" "07/29/98" 454.46 "7.34,46" 35
+"66" 3000 "Martti Vainio" "06/12/91" 485.08 "8.05,08" 40
+"67" 3000 "Noel Tijou" "05/24/87" 511.09 "8.31,9" 45
+"68" 3000 "Josef Kurtz" "05/16/89" 533.07 "8.53,7" 50
+"69" 3000 "Gunther Hesselmann" "07/15/81" 541.08 "9.01,8" 55
+"70" 3000 "Siem Herlaar" "08/31/90" 576.05 "9.36,5" 60
+"71" 3000 "Derek Turnbull" "02/08/92" 587.04 "9.47,4" 65
+"72" 3000 "John Keston" "07/27/95" 651 "10.51,0" 70
+"73" 3000 "Scotty Carter" "06/28/92" 724 "12.04,0" 75
+"74" 3000 "Ed Benham" "01/01/88" 792.06 "13.12,6" 80
+"75" 3000 "Paul Spangler" "05/04/84" 992 "16.32,0" 85
+"76" 3000 "Paul Spangler USA" "09/16/89" 1208.04 "20.08,4" 90
+"77" 5000 "Mohamed Ezzher" "06/17/95" 793.2 "13.13,20" 35
+"78" 5000 "Lucien Rault" "05/21/76" 825.06 "13.45,6" 40
+"79" 5000 "Lucien Rault" "06/19/82" 863.06 "14.23,6" 45
+"80" 5000 "Antonio Villanueva" "07/25/91" 895.6 "14.55,60" 50
+"81" 5000 "Gunther Hesselmann" "06/27/81" 942.35 "15.42,35" 55
+"82" 5000 "Willem Ravensbergen" "09/28/89" 991.02 "16.31,2" 60
+"83" 5000 "Derek Turnbull" "03/13/92" 998.08 "16.38,8" 65
+"84" 5000 "Derek Turnbull" "07/23/97" 1114.61 "18.34,61" 70
+"85" 5000 "James Todd" "07/23/97" 1200.13 "20.00,13" 75
+"86" 5000 "Ed Benham" "08/06/88" 1317.88 "21.57,88" 80
+"87" 5000 "Yoshiharu Ueda" "09/16/94" 1550.97 "25.50,97" 85
+"88" 5000 "Alfred Althaus" "07/23/97" 2160.64 "36.00,64" 90
+"89" 5000 "Herbert Kirk" "07/25/91" 3023.53 "50.23,53" 95
+"90" 10000 "Carlos Lopes" "07/02/84" 1637.48 "27.17,48" 35
+"91" 10000 "Martti Vainio" "06/25/91" 1710.88 "28.30,88" 40
+"92" 10000 "Antonio Villanueva" "11/29/87" 1802.56 "30.02,56" 45
+"93" 10000 "Ron Robertson" "07/24/91" 1861.9 "31.01,90" 50
+"94" 10000 "Gunter Mielke" "01/01/97" 1949.86 "32.29,86" 55
+"95" 10000 "Luciano Acquarone" "07/20/91" 2054.88 "34.14,88" 60
+"96" 10000 "Derek Turnbull" "03/15/92" 2082.08 "34.42,8" 65
+"97" 10000 "Warren Utes" "07/21/91" 2303.69 "38.23,69" 70
+"98" 10000 "David Morrison" "09/09/89" 2523.04 "42.03,4" 75
+"99" 10000 "Ed Benham" "08/04/88" 2669.86 "44.29,86" 80
+"100" 10000 "Josef Galia" "08/28/85" 3263 "54.23,0" 85
+"101" 10000 "Paul Spangler" "07/29/89" 4300.78 "1.11.40,78" 90
+"102" 42195 "Carlos Lopes" "04/20/85" 7632 "2.07.12" 35
+"103" 42195 "John Campbell" "04/16/90" 7864 "2.11.04" 40
+"104" 42195 "Kjell-Erik Stihl" "09/29/91" 8151 "2.15.51" 45
+"105" 42195 "Titus Mamabola" "01/01/91" 8370 "2.19.30" 50
+"106" 42195 "Erik Estbye" "01/01/76" 8795 "2.26.35" 55
+"107" 42195 "Luciano Acquarone" "07/28/91" 9495 "2.38.15" 60
+"108" 42195 "Will van der Lee" "04/23/95" 9866 "2.44.26" 65
+"109" 42195 "John Keston" "01/01/96" 10840 "3.00.40" 70
+"110" 42195 "Gordon Porteous" "06/25/89" 12192 "3.23.12" 75
+"111" 42195 "Andre Osselaer" "07/27/96" 14891 "4.08.11" 80
+"112" 42195 "Sam Gadless" "01/01/95" 22998 "6.23.18" 85
+"113" 42195 "Josef Galia" "01/01/90" 27266 "7.34.26" 90

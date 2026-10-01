@@ -1,0 +1,21 @@
+class IVector {
+public:
+  virtual int getSize() = 0;
+  virtual double getValue( int i ) = 0;
+  virtual void setValue( int i, double value ) = 0;
+  ...
+};
+
+class Vector : public IVector {
+  ...
+};
+
+class ReversedVector : public IVector {
+  IVector &m_vec;
+public:
+  ReversedVector( IVector &vec ) : m_vec(vec) {}
+
+  virtual int getSize() { return m_vec.getSize(); }
+  virtual int getValue( int i ) { return m_vec.getValue(m_vec.getSize() - i - 1); }
+  ...
+};

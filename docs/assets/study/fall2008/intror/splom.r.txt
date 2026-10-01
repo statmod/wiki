@@ -1,0 +1,12 @@
+splom(USArrests)
+
+splom(~USArrests[c(3, 1, 2, 4)] | state.region, 
+      pscales = 0, type = c("g", "p", "smooth"))
+
+splom(~data.frame(mpg, disp, hp, drat, wt, qsec),
+      data = mtcars, groups = cyl, pscales = 0, 
+      varnames = c("Miles\nper\ngallon", "Displacement\n(cu. in.)",
+                   "Gross\nhorsepower", "Rear\naxle\nratio", 
+                   "Weight", "1/4 mile\ntime"),
+      auto.key = list(columns = 3, title = "Number of Cylinders"))
+

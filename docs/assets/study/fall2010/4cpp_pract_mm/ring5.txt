@@ -1,0 +1,241 @@
+// Ring5.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+/*
+На что следует обратить внимание (что можно и что нельзя):
+--- НЕЛЬЗЯ перегрузить следующие операторы: .  ?:  :: 
+--- Перегружать операторы можно с помощью внешних (обычно friend-) функций, а можно как метод
+--- Эти операторы можно перегрузить только с помощью метода: [] () -> =
+--- У оператора [] может быть только один параметр
+--- Для оператора () параметры могут быть любые в любом количестве и можно перегрузить несколько версий оператора для различного списка параметров
+--- НЕЛЬЗЯ изменить приоритет, порядок передачи(=вычисления) аргументов и порядок вычисления для операторов
+--- Для всех ПЕРЕГРУЖЕННЫХ бинарных операторов порядок передачи аргументов "стандартный С", то есть справа налево, как для функций
+--- Перегруженный оператор-метод ничуть не хуже обычного метода. Например, он может наследоваться и быть виртуальным.  
+--- Ограничения на тип параметров и возвращаемого значения довольно мягкие. Вообще отсутствуют ограничение на семантику, поэтому можно, скажем, перегрузить оператор+ так, что он будет изменять значение аргумента. Нетривиальное поведение оператора может в некоторых специальных случаях быть отличной идеей (например, перегруженный оператор << для потоков), но в общем случае не рекомендуется
+--- Оператор -> должен возвращать нечто, для чего определен оператор ->
+*/
+
+
+
+
+
+using namespace std;
+//Раскинулось поле по модулю пять...
+class Ring5{
+	friend ostream& operator<<(ostream& os, const Ring5& R);
+	friend istream& operator>>(istream& is, Ring5& R);
+	friend const Ring5 operator-(const Ring5& r1, const Ring5& r2);
+private:
+	static const int mod = 5;
+	int val;
+public:
+	Ring5(int val = 0) : val((mod + val % mod) % mod){
+		;
+	}
+
+	//Приведение типа. ВНИМАНИЕ! Здесь не надо указывать возвращаемый тип
+	operator int()const{
+		return val;
+	}
+
+	//Оператор присваивания. Теперь можно присваивать b = a = 4;
+	Ring5& operator=(int val){
+		this->val = (mod + val % mod) % mod;
+		return *this;
+	}
+
+	Ring5 operator+(const Ring5& R) const{
+		return Ring5(this->val + R.val);
+	}
+
+	//Можно было перегрузить (-) как (+), но мы попробуем иначе=)
+	/*
+	const Ring5 operator-(const Ring5& R) const{
+		return Ring5(this->val - R.val);
+	}
+	*/
+
+
+
+	Ring5 operator-() const{		
+		return Ring5(-val);
+	}
+
+	Ring5 operator~() const{	
+		//PHI(5) - 1 == (5 - 1) - 1 == 3  (=>) a^(-1) === a^3 mod 5 
+		return Ring5(val*val*val);
+	}
+
+	Ring5& operator +=(const Ring5& R){
+		(this->val += R.val) %= mod;
+	}
+
+	//Prefix form (++a)
+	Ring5& operator++(){
+		(++this->val) %= mod; 
+		return *this;
+	}
+
+	//Postfix form (a++)
+	//Постфиксная форма определяется именно так --- через мнимый целочисленный параметр
+	//тут const обязательно писать, иначе можно получить ошибку. i++++ --- увеличит значение на 1, а не на 2
+	const Ring5 operator++(int){
+		Ring5 prev(*this);
+		(++this->val) %= mod;
+		return prev;
+	}
+};
+
+
+//Операторы потока не перегрузить иначе --- у нас ведь нет доступа к классам iostream
+ostream& operator<<(ostream& os, const Ring5& R){
+	return os << R.val << "(" << R.mod << ")";
+}
+
+istream& operator>>(istream& is, Ring5& R){
+	int i;
+	is >> i;
+	R = i;
+	return is;
+}
+
+
+//Симметричные операторы кажется логичным перегружать именно так
+const Ring5 operator-(const Ring5& r1, const Ring5& r2){
+	return Ring5(r1.val - r2.val);
+}
+
+//Функциональный объект =)
+class Function{
+public:
+	virtual double operator()(double x) const = 0;
+};
+
+class ParabolicFunction : public Function{
+double a, b, c;
+public:
+	ParabolicFunction(double a = .0, double b = .0, double c =.0) : a(a), b(b), c(c){
+		;
+	}
+
+	double operator[](int i) const{
+		switch(i){
+			case 0: return a;
+			case 1: return b;
+			default: return c;
+		}
+	}
+	
+	double operator()(double x) const{
+		return a*x + b*x + c;
+	}
+
+	double operator()(double x, double y) const{
+		return a*x*x + b*x + c - y;
+	}
+
+};
+
+
+//Так работаем с []
+class Array{
+	double *p;
+	size_t size;
+public:
+	Array(size_t size = 0) : size(size){
+		p = new double[size];
+	}
+
+	~Array(){
+		delete [] p;
+	}
+
+	Array(const Array& A) : size(A.size){
+		this->p = new double[size];
+		memcpy(this->p, A.p, size*sizeof(double));
+	}
+
+	Array& operator=(const Array& A){
+		delete [] p;
+		this->size = A.size;
+		this->p = new double[size];
+		memcpy(this->p, A.p, size*sizeof(double));
+		return *this;
+	}
+
+	double& operator[](size_t inx){
+		return p[inx];
+	}
+
+	const double& operator[](size_t inx) const {
+		return p[inx];
+	}
+};
+
+
+// перегрузка , * и ->
+struct B{
+	int i;
+};
+
+//Можно перегрузить и , * ->
+//Только непонятно, кому и зачем это может понадобиться....
+int operator,(const B& b1, const B& b2){
+	return b1.i + b2.i;
+}
+
+class sPoiter{
+private:
+	B* p;
+public:
+	B& operator*(){
+		return *p;
+	}
+
+	const B& operator*() const{
+		return *p;
+	}
+
+	B* operator->(){
+		return p;
+	}
+
+	const B* operator->() const {
+		return p;
+	}
+};
+
+
+
+int _tmain(int argc, _TCHAR* argv[]){
+	Ring5 a(3), b(4);
+	a = a + b;
+	a = a - b;
+	a++;
+	
+
+	int i, j;
+	++(i = j = 3);
+
+	ParabolicFunction F(1, 2, 3);
+	cout << F[0] << F[1] << F[2] << endl;
+
+	Function& f = F;
+
+	cout << f(2);
+
+	Array ARR;
+
+	Array ARR2(10);
+	ARR = ARR2;
+
+	ARR[1] = ARR[2] = 100;
+
+
+	cout << i;
+	cout << ~a << " " << b;
+	return 0;
+}
+

@@ -1,0 +1,8 @@
+parallel(~mtcars[c(1, 3, 4, 5, 6, 7)] | factor(cyl), 
+         mtcars, groups = carb, 
+         key = simpleKey(levels(factor(mtcars$carb)), points = FALSE, 
+                         lines = TRUE, space = "top", columns = 3), 
+         layout = c(3, 1))
+
+parallel(~ asinh(gvhd10[c(3, 2, 4, 1, 5)]), data = gvhd10, 
+         subset = Days == "13", alpha = 0.01, lty = 1)

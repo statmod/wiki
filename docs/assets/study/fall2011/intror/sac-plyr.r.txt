@@ -1,0 +1,60 @@
+#  Based on the code created by Vincent Vu
+#  This work is licensed under a Creative Commons 
+#  Attribution-NonCommercial-ShareAlike 3.0 Unported License.
+# 
+
+# golfdata.Rdata contains a single object, 'golfdata', that is a list with
+# 3 components: 'leaderboard', 'scorecard', 'course'
+load('golfdata.RData')
+
+runningTotal <- function(df, par = golfdata$course$par) {
+    # Reorder the rows of the data frame by the round number 
+    # (so that the scores are in chronological order)
+    # and extract the scores as a matrix
+    x <- as.matrix(df[order(df$round), 1:18])
+    n <- nrow(x)
+
+    # Convert from an 18 x n matrix to a vector of length 18*n, rowwise
+    x <- as.vector(t(x))
+
+    # Calculate the running over/under score
+    x <- cumsum(x - rep(par, n))
+
+    return(x)
+}
+
+# ===================================
+# = Split, apply, combine with plyr =
+# ===================================
+library(plyr)
+scores <- daply(df, 'player', runningTotal)
+
+ddply(df, 'country', nrow)
+
+countPlayers <- function(x) {
+    data.frame(count = length(unique(x$player)))
+}
+
+ddply(df, 'country', countPlayers)
+
+
+# ==============
+# = Strategy 2 =
+# ==============
+scorePlayer <- function(x) {
+    par <- golfdata$course$par
+    data.frame(score = sum(x[1:18] - golfdata$course$par))
+}
+
+scores <- ddply(df, c('player', 'round'), scorePlayer)
+scores <- merge(df, scores)
+daply(scores, c('country', 'round'), function(x) median(x$score))
+
+# Bonuses
+hp_per_cyl <- function(hp, cyl, ...) hp / cyl
+splat(hp_per_cyl)(mtcars[1,])
+splat(hp_per_cyl)(mtcars)
+
+ddply(mtcars, .(round(wt)),
+      function(df) mean_hp_per_cyl(df$hp, df$cyl))
+ddply(mtcars, .(round(wt)), splat(mean_hp_per_cyl))

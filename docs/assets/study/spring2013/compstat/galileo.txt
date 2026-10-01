@@ -1,0 +1,18 @@
+# In 1609, Galileo proved mathematically that the horizontal distance traveled
+# by an object with an initial horizontal velocity is a parabola. He based his
+# insight on an experimental setup consisting of a ball placed at a certain
+# height on a ramp and then released. The distance travelled was then
+# measured. The data consists of 2 variables measured by Galileo. One is initial
+# height and one the horizontal distance traveled.
+# Fit 4 polynomial models of distance modelled by initial height. Use linear,
+# parabola, cubic and quartic models. Compare the models by the means of F-test
+# and AIC criterion. Which model fits better?
+
+"init.h" "h.d"
+"1" 600 253
+"2" 700 337
+"3" 800 395
+"4" 950 451
+"5" 1100 495
+"6" 1300 534
+"7" 1500 573

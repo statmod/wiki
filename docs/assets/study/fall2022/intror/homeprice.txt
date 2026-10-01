@@ -1,0 +1,58 @@
+# This dataset is a random sampling of the homes sold in Maplewood, NJ during
+# the year 2001. Of course the prices will either seem incredibly high or
+# fantastically cheap depending on where you live, and if you have recently
+# purchased a home.
+
+# list:         List price of home (in thousands)
+# sale:         Actual sale price
+# full:         Number of full bathrooms
+# half:         Number of half bathrooms
+# bedrooms:     Number of bedrooms
+# rooms:        Total number of rooms
+# neighborhood: Subjective assessment of neighborhood on scale of 1-5
+
+#
+# Task:
+# 1. Write a dataframe with the following properties:
+#    - Add new column with single room price for each house
+#    - Add column with overpayment per house
+#    - Add column with "neighborhood price" (define your own criterion)
+#    - Data for houses with >= 3 full bathrooms should be emitted
+#    - Use tab symbol as field separator
+# 2. Print some information about dataset (either to file or to standard output)
+#    - Maximal and minimal price per room
+#    - Average amount of bedroom, bathrooms per house
+#    - Top 5 "neighborhood price" houses
+
+"list"!"sale"!"full"!"half"!"bedrooms"!"rooms"!"neighborhood"
+"1"!80!117.7!1!0!3!6!1
+"2"!151.4!151!1!0!4!7!1
+"3"!310!300!2!1!4!9!3
+"4"!295!275!2!1!4!8!3
+"5"!339!340!2!0!3!7!4
+"6"!337.5!337.5!1!1!4!8!3
+"7"!228.7!215!3!0!3!7!2
+"8"!245!239!1!1!3!7!2
+"9"!339!345!1!2!3!7!3
+
+"10"!43!48!1!0!1!3!2
+"11"!279!262.5!1!2!3!8!2
+"12"!599!613!3!2!4!10!5
+"13"!119!119!2!0!3!7!2
+"14"!289!305!2!0!3!6!3
+"15"!249!249!1!1!2!4!3
+"16"!178!170!2!1!3!6!2
+"17"!159!153!1!0!2!7!2
+"18"!289!291!2!1!3!7!3
+"19"!488!450!3!0!3!7!5
+
+"20"!376!370!3!0!3!7!4
+"21"!249!245!1!1!3!8!3
+"22"!275!275!2!0!4!8!3
+"23"!275!272.5!2!1!2!6!3
+"24"!459!459!3!1!5!11!4
+"25"!219!230!1!1!3!7!3
+"26"!359!360!2!0!3!8!4
+"27"!379!370!2!1!4!8!4
+"28"!189!185!1!1!4!8!2
+"29"!173!185!1!0!3!7!3

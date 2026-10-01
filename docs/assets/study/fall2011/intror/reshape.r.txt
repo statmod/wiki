@@ -1,0 +1,33 @@
+library(reshape2)
+
+(smithsm <- melt(smiths, id = c("subject", "time"), measured = c("age", "weight", "height")))
+melt(smiths, id = c("subject", "time"))
+melt(smiths, id = 1:2)
+melt(smiths, measured = c("age", "weight", "height"))
+melt(smiths)
+
+trial <- data.frame(id = factor(1:4),
+                    A_1 = c(1, 2, 1, 2),
+                    A_2 = c(2, 1, 2, 1),
+                    B_1 = c(3, 3, 3, 3))
+(trialm <- melt(trial))
+(trialm <- cbind(trialm, colsplit(trialm$variable, "_", names = c("treatment", "time"))))
+
+dcast(smithsm, time + subject ~ variable)
+dcast(smithsm, ... ~ variable)
+dcast(smithsm, ... ~ subject)
+dcast(smithsm, ... ~ time)
+
+ffm <- melt(french_fries, id = 1:4, na.rm = TRUE)
+dcast(ffm, treatment ~ ., length)
+dcast(ffm, . ~ treatment, length)
+dcast(ffm, rep ~ treatment, length)
+dcast(ffm, treatment ~ rep, length)
+dcast(ffm, treatment + rep ~ ., length)
+dcast(ffm, rep + treatment ~ ., length)
+
+dcast(ffm, treatment ~ ., sum, margins = TRUE)
+dcast(ffm, treatment + rep ~ time, sum, margins = TRUE)
+
+dcast(ffm, treatment + rep ~ time, sum, margins = "treatment")
+dcast(ffm, rep + treatment ~ time, sum, margins = "rep")

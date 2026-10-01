@@ -1,0 +1,40 @@
+# The data set contains estimated populations for a variety of Bay checkerspot
+# butterflies near California. A common model for population dynamics is the
+# Ricker model, for which t is a time in years: N_{t+1} =
+# a*N_{t}*exp(b*N_{t})*W_{t}, where "a" and "b" are parameters and W_{t} is a
+# lognormal multiplicative error. This can be turned into a regression model by
+# dividing by N_{t} and then taking logs of both sides to give: log(N_{t+1} /
+# N_{t}) = log(a) + b*N_{t} + eps_t, let y_{t} be the left-hand side. This may be
+# rewritten as: y_{t} = r*(1-N_{t}/K) + eps_t, because "r" can be interpreted as
+# an unconstrained growth rate and "K" as a carrying capacity.
+#
+# Fit the model and find values for "r" and "K".
+
+"year" "Nt"
+"1" 1960 90
+"2" 1961 175
+"3" 1962 40
+"4" 1963 45
+"5" 1964 175
+"6" 1965 200
+"7" 1966 425
+"8" 1967 425
+"9" 1968 800
+"10" 1969 256
+"11" 1970 713
+"12" 1971 198
+"13" 1972 1819
+"14" 1973 575
+"15" 1974 567
+"16" 1975 1819
+"17" 1976 7227
+"18" 1977 852
+"19" 1978 216
+"20" 1979 244
+"21" 1980 267
+"22" 1981 1753
+"23" 1982 999
+"24" 1983 1788
+"25" 1984 143
+"26" 1985 79
+"27" 1986 94

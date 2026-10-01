@@ -1,0 +1,22 @@
+# The data set contains values of three popular midsize cars for the years 1990
+# to 2004. The 2004 price is the new-car price, the other values of used
+# cars. For each car, fit the exponential model with decay. Compare the decay
+# rates to see which car depreciates faster (use the variable year = 2004 - Year
+# and model y = N*exp(-r*t) ).
+
+"Year" "Accord" "Camry" "Taurus"
+"1" 2004 16390 19560 20490
+"2" 2003 14795 16010 10817
+"3" 2002 12893 13965 8633
+"4" 2001 10949 10884 7620
+"5" 2000 9630 9830 6340
+"6" 1999 8287 8328 5308
+"7" 1998 7031 7277 4455
+"8" 1997 5581 6597 3325
+"9" 1996 5178 5389 3038
+"10" 1995 4720 4236 2263
+"11" 1994 4466 4131 1792
+"12" 1993 4070 3698 1620
+"13" 1992 3341 3329 1412
+"14" 1991 2496 2934 1057
+"15" 1990 2196 2120 948

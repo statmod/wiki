@@ -1,0 +1,51 @@
+qqmath(~ gcsescore | factor(score), data = Chem97,
+       f.value = ppoints(100))
+
+qqmath(~ gcsescore | gender, Chem97, groups = score, aspect = "xy",
+       f.value = ppoints(100), auto.key = list(space = "right"),
+       xlab = "Standard Normal Quantiles",
+       ylab = "Average GCSE Score")
+
+Chem97.mod <- transform(Chem97, gcsescore.trans = gcsescore^2.34)
+qqmath(~ gcsescore.trans | gender, Chem97.mod, groups = score,
+       f.value = ppoints(100), aspect = "xy",
+       auto.key = list(space = "right", title = "score"),
+       xlab = "Standard Normal Quantiles",
+       ylab = "Transformed GCSE Score")
+
+qq(gender ~ gcsescore | factor(score), Chem97,
+   f.value = ppoints(100), aspect = 1)
+
+bwplot(factor(score) ~ gcsescore | gender, data = Chem97, 
+       xlab = "Average GCSE Score")
+bwplot(gcsescore^2.34 ~ gender | factor(score), Chem97, 
+       varwidth = TRUE, layout = c(6, 1),
+       ylab = "Transformed GCSE score")library("latticeExtra")
+
+data(gvhd10)
+densityplot(~log(FSC.H) | Days, data = gvhd10, 
+            plot.points = FALSE, ref = TRUE, layout = c(2, 4))
+histogram(~log2(FSC.H) | Days, gvhd10, xlab = "log Forward Scatter",
+          type = "density", nint = 50, layout = c(2, 4))
+bwplot(Days ~ log(FSC.H), data = gvhd10, 
+       xlab = "log(Forward Scatter)", ylab = "Days Past Transplant")
+bwplot(Days ~ log(FSC.H), gvhd10, 
+       panel = panel.violin, box.ratio = 3,
+       xlab = "log(Forward Scatter)", 
+       ylab = "Days Past Transplant")
+
+bc.titanic <- 
+    barchart(Class ~ Freq | Sex + Age, as.data.frame(Titanic), 
+             groups = Survived, stack = TRUE, layout = c(4, 1),
+             auto.key = list(title = "Survived", columns = 2),
+             scales = list(x = "free"))
+update(bc.titanic, 
+       panel = function(...) {
+           panel.grid(h = 0, v = -1)
+           panel.barchart(...)
+       })
+
+stripplot(factor(mag) ~ depth, quakes)
+stripplot(depth ~ factor(mag), quakes, 
+          jitter.data = TRUE, alpha = 0.6,
+          xlab = "Magnitude (Richter)", ylab = "Depth (km)")

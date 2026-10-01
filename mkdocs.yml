@@ -1,0 +1,124 @@
+site_name: StatMod Wiki
+site_description: Wiki кафедры статистического моделирования
+site_url: https://statmod.github.io/wiki/
+repo_url: https://github.com/statmod/wiki
+repo_name: statmod/wiki
+
+# For a custom domain later (e.g. wiki.statmod.ru), change site_url only.
+# Keep all documentation links relative so both base paths work.
+
+theme:
+  name: material
+  language: ru
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+plugins:
+  - search:
+      lang:
+        - ru
+        - en
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - tables
+  - footnotes
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+
+extra:
+  social: []
+
+# Known missing media from the original DokuWiki dump (Cyrillic filenames, etc.)
+validation:
+  omitted_files: info
+  absolute_links: info
+  unrecognized_links: info
+
+nav:
+  - Home: index.md
+  - "Преподаватели": staff/index.md
+  - "On-line курсовые работы/НИР/Учебная практика для 1 и 2 курсов":
+    - Overview: research/index.md
+    - "Что это такое": research/readme.md
+    - "Список задач": research/contents.md
+  - "Информация для учебы":
+    - Overview: study/index.md
+    - "Вопросы к экзаменам": study/questions.md
+    - "Аспирантура": study/asp/index.md
+    - "Литература": books/index.md
+    - "Материалы от В.В.Некруткина": books/vv.md
+    - "Учеба: Весна 2024/25": study/spring2025/index.md
+    - "Учеба: Осень 2025/26": study/fall2025/index.md
+    - "Учеба: Весна 2025/26": study/spring2026/index.md
+    - "Учеба: Осень 2026/27": study/fall2026/index.md
+  - "Кружок по анализу данных 2015/2016": study/idata.md
+  - "Диссертации": phd.md
+  - "LaTeX/TeX": latex/index.md
+  - "Учеба (архив)":
+    - "Осенний семестр 2007-2008 уч. года": study/fall2007/index.md
+    - "Осенний семестр 2008-2009 уч. года": study/fall2008/index.md
+    - "Осенний семестр 2009-2010 уч. года": study/fall2009/index.md
+    - "Осенний семестр 2010-2011 уч. года": study/fall2010/index.md
+    - "Осенний семестр 2011-2012 уч. года": study/fall2011/index.md
+    - "Осенний семестр 2012-2013 уч. года": study/fall2012/index.md
+    - "Осенний семестр 2013-2014 уч. года": study/fall2013/index.md
+    - "Осенний семестр 2014-2015 уч. года": study/fall2014/index.md
+    - "Осенний семестр 2015-2016 уч. года": study/fall2015/index.md
+    - "Осенний семестр 2016-2017 уч. года": study/fall2016/index.md
+    - "Осенний семестр 2017-2018 уч. года": study/fall2017/index.md
+    - "Осенний семестр 2018-2019 уч. года": study/fall2018/index.md
+    - "Осенний семестр 2019-2020 уч. года": study/fall2019/index.md
+    - "Осенний семестр 2020-2021 уч. года": study/fall2020/index.md
+    - "Осенний семестр 2021-2022 уч. года": study/fall2021/index.md
+    - "Осенний семестр 2022-2023 уч. года": study/fall2022/index.md
+    - "Осенний семестр 2023-2024 уч. года": study/fall2023/index.md
+    - "Осенний семестр 2024-2025 уч. года": study/fall2024/index.md
+    - "Весенний семестр 2007-2008 уч. года": study/spring2008/index.md
+    - "Весенний семестр 2008-2009 уч. года": study/spring2009/index.md
+    - "Весенний семестр 2009-2010 уч. года": study/spring2010/index.md
+    - "Весенний семестр 2010-2011 уч. года": study/spring2011/index.md
+    - "Весенний семестр 2011-2012 уч. года": study/spring2012/index.md
+    - "Весенний семестр 2012-2013 уч. года": study/spring2013/index.md
+    - "Весенний семестр 2013-2014 уч. года": study/spring2014/index.md
+    - "Весенний семестр 2014-2015 уч. года": study/spring2015/index.md
+    - "Весенний семестр 2015-2016 уч. года": study/spring2016/index.md
+    - "Весенний семестр 2016-2017 уч. года": study/spring2017/index.md
+    - "Весенний семестр 2017-2018 уч. года": study/spring2018/index.md
+    - "Весенний семестр 2018-2019 уч. года": study/spring2019/index.md
+    - "Весенний семестр 2021-2022 уч. года": study/spring2020/index.md
+    - "Весенний семестр 2020-2021 уч. года": study/spring2021/index.md
+    - "Весенний семестр 2021-2022 уч. года": study/spring2022/index.md
+    - "Весенний семестр 2022-2023 уч. года": study/spring2023/index.md
+    - "Весенний семестр 2023-2024 уч. года": study/spring2024/index.md
+  - "Предварительное распределение по специализациям, 17.05.2010": course2welcome.md
+  - "Предварительное распределение по специализациям кафедры статистического моделирования на 20.05.2011 (на 26.08.2011 изменений нет)": course2welcome2011.md
+  - "Распределение по специализациям (на 27.08.2012)": course2welcome2012.md
+  - "Окончательное распределение по специализациям, 29.08.2013": course2welcome2013.md
+  - "Предварительное распределение по специализациям, 16.05.2014": course2welcome2014.md
+  - "Персональные страницы пользователей": users/index.md

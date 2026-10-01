@@ -1,0 +1,27 @@
+state <- data.frame(state.x77, state.region)
+
+xyplot(Murder ~ Life.Exp | state.region, data = state, 
+       layout = c(2, 2), type = c("p", "g"), subscripts = TRUE)
+
+while (!is.null(fp <- trellis.focus())) {
+    if (fp$col > 0 & fp$row > 0)
+        panel.identify(labels = rownames(state))
+}
+
+qqmath(~ (1000 * Population / Area), state, 
+       ylab = "Population Density (per square mile)",
+       xlab = "Standard Normal Quantiles",
+       scales = list(y = list(log = TRUE, at = 10^(0:3))))
+
+trellis.focus()
+do.call(panel.qqmathline, trellis.panelArgs())
+panel.identify.qqmath(labels = row.names(state))
+trellis.unfocus()
+
+env <- environmental
+env$ozone <- env$ozone^(1/3)
+
+splom(env, pscales = 0, col = "grey")
+trellis.focus("panel", 1, 1, highlight = FALSE)
+panel.link.splom(pch = 16, col = "black")
+trellis.unfocus()

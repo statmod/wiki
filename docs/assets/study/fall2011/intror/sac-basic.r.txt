@@ -1,0 +1,100 @@
+#  Based on the code created by Vincent Vu
+#  This work is licensed under a Creative Commons 
+#  Attribution-NonCommercial-ShareAlike 3.0 Unported License.
+# 
+
+# golfdata.Rdata contains a single object, 'golfdata', that is a list with
+# 3 components: 'leaderboard', 'scorecard', 'course'
+load('golfdata.RData')
+
+# ==============================================
+# = Look at an individual player's performance =
+# ==============================================
+
+# Extract Tiger Woods' score card for the 4th round and calculate his running
+# over/under par score
+df <- subset(golfdata$scorecard, 
+             player == 'Tiger Woods' & round == 4)
+tiger <- as.numeric(df[, 1:18])
+tiger <- cumsum(tiger - golfdata$course$par)
+
+
+plot(tiger, type = 'l')
+
+# Extract Tiger Wood's score card and reorder the rows by the round (1 to 4)
+df <- subset(golfdata$scorecard, 
+             player == 'Tiger Woods')
+tiger <- as.matrix(df[order(df$round), 1:18])
+
+# Convert from an 18 x 4 matrix to a vector of length 18*4, rowwise
+tiger <- as.vector(t(tiger))
+
+# Calculate Tiger's running score across the 4 rounds of the tournament
+tiger <- cumsum(tiger - rep(golfdata$course$par, 4))
+
+plot(tiger, type = 'l')
+
+# ==========================================================================
+# = Abstract the analysis so that it can be easily repeated for any player =
+# ==========================================================================
+runningTotal <- function(df, par = golfdata$course$par) {
+    # Reorder the rows of the data frame by the round number 
+    # (so that the scores are in chronological order)
+    # and extract the scores as a matrix
+    x <- as.matrix(df[order(df$round), 1:18])
+    n <- nrow(x)
+
+    # Convert from an 18 x n matrix to a vector of length 18*n, rowwise
+    x <- as.vector(t(x))
+
+    # Calculate the running over/under score
+    x <- cumsum(x - rep(par, n))
+
+    return(x)
+}
+
+# Check out Charl Schwartzel
+charl <- runningTotal(subset(golfdata$scorecard, 
+                             player == 'Charl Schwartzel'))
+plot(charl, xlab = 'hole', ylab = 'score', type = 'l')
+
+# ==================================================================
+# = Look at all players that made the cut (played in all 4 rounds) =
+# ==================================================================
+madecut <- subset(golfdata$leaderboard, position != 'CUT')$player
+df <- subset(golfdata$scorecard, player %in% madecut)
+df <- droplevels(df)
+
+# Two approaches to computing runningTotal for each player.
+# The results are stored row-wise in a 2-dimensional array
+
+# =====================
+# = For-loop approach =
+# =====================
+scores <- matrix(nrow = nlevels(df$player), ncol = 18 * 4)
+for (i in 1:nlevels(df$player)) {
+    x <- subset(df, player == levels(df$player)[i])
+    scores[i, ] <- runningTotal(x)
+}
+rownames(scores) <- levels(df$player)
+
+# =====================================
+# = Split, apply, combine with base R =
+# =====================================
+x <- split(df, df$player)
+x <- lapply(x, runningTotal)
+scores <- do.call(rbind, x)
+
+# ====================
+# = Plot the results =
+# ====================
+matplot(t(scores), xlab = 'hole', ylab = 'total to par', type = 'l')
+# Add the median runing total
+lines(1:ncol(scores), apply(scores, 2, median), lwd = 2)    
+
+# ==================================================================
+# = Look at all players that made the cut (played in all 4 rounds) =
+# ==================================================================
+madecut <- subset(golfdata$leaderboard, position != 'CUT')$player
+df <- subset(golfdata$scorecard, player %in% madecut)
+df <- droplevels(df)

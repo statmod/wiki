@@ -1,0 +1,8 @@
+site/
+.cache/
+__pycache__/
+*.pyc
+.DS_Store
+venv/
+.venv/
+conversion-report.md

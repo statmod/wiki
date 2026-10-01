@@ -1,0 +1,99 @@
+// Stack.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+
+using namespace std;
+
+class Stack{
+public:
+	virtual void push(int val) = 0;
+	virtual int pop(void) = 0;
+	virtual ~Stack(){
+		;
+	}
+};
+
+//Ёто мы написали в классе
+class SStack : public Stack{
+private:
+	int ar[100];
+	int top;
+public:
+	SStack(){
+		top = 0;
+	}
+
+	void push(int val){
+		ar[top++] = val;
+	}
+
+	int pop(void){
+		return ar[--top];
+	}
+};
+
+class LStack : public Stack{
+private:
+	struct Lel{
+		int val;
+		Lel *next;
+	};
+	Lel *top;
+public:
+	LStack(){
+		top = NULL;
+	}
+
+	void push(int val){
+		Lel *p = new Lel;
+		p->val = val;
+		p->next = top;
+		top = p;
+	}
+
+	int pop(void){
+		Lel *p = top->next;
+		int val = top->val;
+		delete top;
+		top = p;
+		return val;
+	}
+
+	~LStack(){
+		Lel *p;
+		while(top){
+			p = top;
+			delete p;
+		}
+	}
+};
+
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+	Stack *ps;
+	cout << "Enter 1 for SStack or other for LStack" << endl;
+	int choice;
+	cin >> choice;
+	if(choice == 1){
+		ps = new SStack;
+	}else{
+		ps = new LStack;
+	}
+	
+	ps->push(1);
+	ps->push(2);
+	ps->push(3);
+	cout << ps->pop() << endl;
+	cout << ps->pop() << endl;
+
+	ps->push(4);
+	ps->push(5);
+	cout << ps->pop() << " " << ps->pop() << " " << ps->pop() << endl;
+	//ѕомните, тут есть подвох=)
+
+	//ѕодумайте, чего нехватает в этих классах
+	return 0;
+}
