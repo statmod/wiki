@@ -1,6 +1,7 @@
 site_name: StatMod Wiki
 site_description: Wiki кафедры статистического моделирования
-site_url: https://statmod.github.io/wiki/
+# site_url: https://statmod.github.io/wiki/
+site_url: https://wiki.statmod.ru
 repo_url: https://github.com/statmod/wiki
 repo_name: statmod/wiki
 
