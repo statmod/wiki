@@ -18,7 +18,14 @@ title: "422 гр., спец. СМ. Задачи статистического �
 
 Инд. данные:
 
-TODO
+| Студент | Данные (папка и файл в архиве) | Задание |
+| --- | --- | --- |
+| Мулюков Азамат Альбертович | `POLLUTIO.STD/POLLUTIO.xls` | `POLLUTIO.TSK` |
+| Сивков Вячеслав Андреевич | `POVERTY.STD/POVERTY.xls` | `POVERTY.TSK` |
+| Першин Антон Андреевич | `us_col.std/I.xls` (US colleges, вариант I) | `us_col_I.tsk` |
+| Зеленская Екатерина Геннадьевна | `CITY_US.STD/CITY.xls` | `CITIES2.TSK` |
+| Полищук Мария Андреевна | `Sleep/SLEEP.xls` | `SLEEP.TSK` |
+| Хасас Икбал Матинович | `2004cars/car2004.xls` | `2004CARS.tsk` |
 
 [Данные](../../assets/study/fall2021/stat_4sm/stat2021_sm.zip) (добавлен xls формат).
 
